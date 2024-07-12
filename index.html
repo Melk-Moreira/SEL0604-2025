@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>SEL0604 - Sinais e Sistemas</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-hide-slide-number="true" data-transition="slide">
+					<div class="logo"><img src="images/sel.png"/> </div>
+					<div class="logo2"><img src="images/usp.png"/> </div>
+					<div class="title">
+					<h2>Aula 1: <br>Introdução à disciplina Sinais e Sistemas</h2>
+					</div>
+					<div class="author">
+					<h3>Prof. Marcos Rogério Fernandes</h3>
+				</div>
+					<div class="advisor">
+					
+					<p style="text-align: center;font-size: 0.8em;">5 de agosto de 2024</p>
+				</div>
+
+				</section>
+				<section>
+
+				<div class="slide-title">
+					<h2>Objetivos</h2>
+				</div>
+				<div class="slide-content">
+					<p>Objetivos dessa aula são:
+							<ul>
+							<li class="fragment">Apresentar as principais abordagens de identificação paramétrica de sistemas;</li> 
+							<li  class="fragment">Introduzir ferramentas de estimação de parâmetros;</li> 
+							<li  class="fragment">Ilustrar os conceitos com exemplos práticos;</li>
+							<li  class="fragment">Evidenciar a importância da identificação de sistemas para engenharia;</li>
+							<li  class="fragment">Fornecer base teórica para implementação de processos de identificação de sistemas reais;</li>						
+						</p>
+						</div>
+
+			</section>
+
+
+				<section>
+					
+					<div class="slide-title">
+					<h2>Roteiro</h2>
+				</div>
+				<div class="slide-content">
+					<p>&nbsp;</p>
+						<ul>
+<!--Present yourself, present the theme. You can state what your
+throughline is, state what’s the aim of the presentation-->
+
+						<li class="fragment">Introdução à identificação de sistemas;</li> <!--talk  about estimation problems in general--> <!-- So what?-->
+						<li class="fragment">Conceitos fundamentais;</li> <!--talk  about  robust estimation problems in specific-->
+						<li class="fragment">Ferramentas de estimação de parâmetros: MQ, MQP, MQR;</li>
+						<li class="fragment">Processo de Identificação Paramétrica;</li>
+						<li class="fragment">Exemplo prático: <i>twin-rotor</i>,</li> <!-- Now what?-->
+						<li class="fragment">Resumo.</li>
+					</ul>
+				</div>					
+				</section>
+
+				<section>
+
+					<div class="slide-title">
+						<h2>Introdução</h2>
+					</div>
+					<div class="slide-content">
+						<p class="lightup">Identificação de sistemas é o processo de construir modelos para sistemas dinâmicos usando <b class="underline">dados</b>.</p>
+								
+								<div class="fragment current-visible"><p><b>Abordagem caixa branca:</b> <br>Princípios da física, biologia, economia etc.</p>
+								<p style="text-align: center;"><img src="images/caixa_branca.png"></p>
+								</div> 
+								<div class="fragment current-visible"><p><b>Abordagem caixa preta:</b><br> Apenas dados.</p>
+									<p style="text-align: center;"><center><img src="images/caixa_preta.png"></center></p>
+								</div> 
+								<div  class="fragment current-visible"><b>Abordagem caixa cinza:</b><br> Princípios + dados.								
+								<p style="text-align: center;"><center><img src="images/caixa_cinza.png"></center></p></div>
+					   </div>
+
+				</section>
+
+
+
+		
+				
+			
+
+
+
+				<!------------------------>
+			</div>
+		</div>
+
+		
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				width: 1244,
+  				height: 700,
+				center:false,
+				katex: {
+    version: 'latest',
+    delimiters: [
+      {left: '$$', right: '$$', display: true},
+      {left: '$', right: '$', display: false},
+      {left: '\\(', right: '\\)', display: false},
+      {left: '\\[', right: '\\]', display: true}
+   ],
+   ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+   macros: {
+	"\\R": "\\mathbb{R}",
+	"\\trp": "\\intercal",
+	"\\diag": "\\text{diag}",
+	"\\Diag": "\\text{Diag}",
+	"\\tr": "\\text{tr}"
+   }
+ },
+				hash: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+				controls: false,
+				progress: false,
+				transition: 'none'
+			});
+		//////remove slide number from first page (data-hide-slide-number="true")
+	    Reveal.addEventListener('slidechanged', (event) => {
+  		const isSnOn = (event.currentSlide.dataset.hideSlideNumber !== 'true');
+  		Reveal.configure({ slideNumber: isSnOn });
+		});
+		</script>
+	</body>
+</html>
+
