@@ -75,7 +75,7 @@
 					<div class="logo"><img src="../images/sel.png"/> </div>
 					<div class="logo2"><img src="../images/usp.png"/> </div>
 					<div class="title">
-					<h2>Aula 2: <br>Revisão de Álgebra e Espaço de Funções</h2>
+					<h2>Aula 2: <br>Revisão de Álgebra</h2>
 					</div>
 					<div class="author">
 					<h3>Prof. Marcos Rogério Fernandes</h3>
@@ -94,11 +94,13 @@
 				<div class="slide-content">
 					<p>Os objetivos dessa aula são:
 							<ul>
-							<li>Rápida revisão de álgebra linear;</li> 
-							<li>Operadores lineares</li>
-							<li>Apresentar o <b>espaço de funções</b>;</li>
-							<li>Comparativo entre espaço Euclidiano e de funções;</li>
-							<li>Projeção no espaço de funções.</li>
+							<li>Fazer rápida revisão de <b>álgebra linear</b>;</li> 
+							<li>Rever o <b>produto escalar</b> e <b>norma</b> de vetores;</li>
+							<li><b>Mudança de base</b> de representação de vetores;</li>
+							<li>Noção de <b>projeção</b> de vetores;</li>
+							<li>Conceituar o <b>Operador linear</b>;</li>
+							<li><b>Autovalores e Autovetores</b> de Operadores Lineares;</li>
+							<li><b>Base</b> de Autovetores.</li>
 						</p>
 						</div>
 
@@ -116,7 +118,7 @@
 						<center class="fragment current-visible">
 							$$\vec{v}=\sum_{i=1}^n v_i \hat{e}_i\in V$$
 							<p>$V$ é um espaço vetorial (ex: $\mathbb{R}^n$);</p>
-							<p>$\{\hat{e}_1,\ldots,\hat{e}_n\}$ é uma <b>base de representação</b>;</p>
+							<p>$E=\{\hat{e}_1,\ldots,\hat{e}_n\}$ é uma <b>base de representação</b>;</p>
 							<p>$\{v_1,\ldots,v_n\}$ são as <b>coordenadas</b> em relação a base $E$.</p>
 					</center>
 
@@ -166,30 +168,72 @@
 			</div>
 			<div class="slide-content">
 				 <p class="lightup" >O que é um produto escalar?</p>
-				<center class="fragment current-visible">
-				<ul><li>Resultado é um Escalar:
-					$$\langle \vec v, \vec w\rangle = c, \text{ com } c \text{ um escalar.}$$</li>
-				<li>Linear pela direita:
+				<center>
+				<ul><li class="fragment">Resultado é um Escalar:
+					$$\langle \vec v, \vec w\rangle = c, \text{ com } c \text{ é um escalar.}$$</li>
+				<li class="fragment">Linear pela direita:
 					$$\langle \vec v, (\alpha \vec w_1 + \beta \vec w_2)\rangle = \alpha\langle \vec v,\vec w_1\rangle + \beta \langle \vec v,\vec w_2\rangle $$
 
 				</li>
 				</ul>
 			</center>
 
-			<center class="fragment current-visible">
-				<ul><li>Comutação:
-					$$\langle \vec v, \vec w\rangle = \langle\vec  w, \vec v\rangle ^*$$
-				</li>
-				Consequência $\Rightarrow $ combinação linear pela esquerda:
-					$$\langle (\alpha\vec  v_1 + \beta \vec v_2), w\rangle = \alpha^*\langle\vec  v_1,\vec w\rangle + \beta^* \langle \vec v_2,\vec w\rangle  $$
-
-				</li>
-				</ul>
-			</center>
-
-			
+						
 			
 	</div>
+
+</section>
+
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >O que é um produto escalar?</p>
+
+	<center>
+		<ul><li>Comutação:
+			$$\langle \vec v, \vec w\rangle = \langle\vec  w, \vec v\rangle ^*$$
+		</li>
+		<p class="fragment">
+		Consequência $\Rightarrow $ combinação linear pela esquerda:
+			$$\langle (\alpha\vec  v_1 + \beta \vec v_2), w\rangle = \alpha^*\langle\vec  v_1,\vec w\rangle + \beta^* \langle \vec v_2,\vec w\rangle  $$
+		</p>
+		</li>
+		</ul>
+	</center>
+
+	
+	
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >Combinação linear direita/esquerda</p>
+
+	<center>
+		Direita:
+		$$\langle \vec v, (\alpha \vec w_1 + \beta \vec w_2)\rangle = \alpha\langle \vec v,\vec w_1\rangle + \beta \langle \vec v,\vec w_2\rangle $$
+		Esquerda:
+		$$\langle (\alpha\vec  v_1 + \beta \vec v_2), w\rangle = \alpha^*\langle\vec  v_1,\vec w\rangle + \beta^* \langle \vec v_2,\vec w\rangle  $$
+	</center>
+
+	
+	
+</div>
 
 </section>
 
@@ -210,9 +254,8 @@
 		$$
 		\|\vec a-\vec b\|=\sqrt{\langle \vec a-\vec b, \vec a-\vec b\rangle}
 		$$
-		<p>Medida de <b>distância</b> dentro do espaço vetorial</p>
-
-		<img src="../images/espaco_vetorial_norma_ab.png" width="400" style="transform: translate(0,-6rem);">
+		<p>Medida de <b>distância</b> dentro do espaço vetorial<br><img src="../images/espaco_vetorial_norma_ab.png" width="300"></p>
+		
 	</center>
 
 	<center class="fragment current-visible">
@@ -223,7 +266,7 @@
 		<p>Medida de <b>tamanho</b> de um vetor</p>
 
 		
-		<img src="../images/espaco_vetorial_norma.png" width="430" style="transform: translate(0,-9rem);">
+		<img src="../images/espaco_vetorial_norma.png" width="300">
 	</center>
 
 	<center class="fragment current-visible">
@@ -234,7 +277,7 @@
 		<p>Se $\|\vec v\|=1$ então $\vec v$ é dito ser <b>vetor unitário</b> e é denotado por $\hat{v}$.</p>
 
 		
-		<img src="../images/espaco_vetorial_norma.png" width="430" style="transform: translate(0,-9rem);">
+		<img src="../images/espaco_vetorial_norma.png" width="300">
 	</center>
 	
 	
@@ -266,7 +309,7 @@
 		$$
 		 \text{proj}_{\vec b}~\vec a = \frac{\langle \vec a, \vec b\rangle^* }{\|\vec b\|^2} \vec b
 		$$
-		<img src="../images/projecao_vetor.png" width="450" style="transform: translate(0,-3rem);">
+		<img src="../images/projecao_vetor.png" width="350">
 	</center>
 	
 	
@@ -289,7 +332,7 @@
 			$$
 			\vec a \perp \vec b \Leftrightarrow \text{proj}_{\vec b}~ \vec a=\vec 0
 			$$
-			<img src="../images/ortogonalidade.png" width="280" style="transform: translate(0,0rem);">
+			<img src="../images/ortogonalidade.png" width="250" style="transform: translate(0,0rem);">
 		</center>
 	
 	<center class="fragment current-visible"r>
@@ -297,7 +340,7 @@
 		$$
 		\vec a \perp \vec b \Leftrightarrow \langle \vec a, \vec b\rangle=0
 		$$
-		<img src="../images/ortogonalidade.png" width="280" style="transform: translate(0,0rem);">
+		<img src="../images/ortogonalidade.png" width="250" style="transform: translate(0,0rem);">
 	</center>
 	
 </div>
@@ -315,14 +358,14 @@
 		 <p class="lightup" >O que é uma base ortogonal?</p>
 		
 		 <center class="fragment current-visible"r>
-					<img src="../images/espaco_vetorial.png" width="550" style="transform: translate(0,-2rem);">
+					<img src="../images/espaco_vetorial.png" width="500">
 		</center>
 	
 
 <center class="fragment current-visible"r>
 	
 	$$\vec a_1 \perp \vec a_2 \perp \vec a_3 \cdots \perp \vec a_n$$
-	<img src="../images/espaco_vetorial_base.png" width="550" style="transform: translate(0,-8rem);">
+	<img src="../images/espaco_vetorial_base.png" width="450">
 </center>
 
 </section>
@@ -338,7 +381,7 @@
 <center>
 	
 	$$\hat a_1 \perp \hat a_2 \perp \hat a_3 \cdots \perp \hat a_n$$
-	<img src="../images/espaco_vetorial_base_unitaria.png" width="550" style="transform: translate(0,-8rem);">
+	<img src="../images/espaco_vetorial_base_unitaria.png" width="450">
 </center>
 	
 </div>
@@ -403,7 +446,7 @@ $$
 	$$
 	\Rightarrow\alpha_i = \langle \hat a_i, \vec v\rangle
 	$$
-	<div class="redSquare" style="transform: translate(31rem,-6.6rem);height: 4rem;width: 16rem;"></div>
+	<div class="redSquare" style="transform: translate(34rem,-6.6rem);height: 4rem;width: 16rem;"></div>
 	</center>
 	
 </div>
@@ -425,7 +468,7 @@ $$
 	$$
 	\Rightarrow\alpha_i = \langle \hat a_i, \vec v\rangle
 	$$
-	<div class="redSquare" style="transform: translate(31rem,-6.6rem);height: 4rem;width: 16rem;"></div>
+	<div class="redSquare" style="transform: translate(34rem,-6.6rem);height: 4rem;width: 16rem;"></div>
 	</center>
 
 
@@ -900,7 +943,7 @@ $$
 		 <p class="lightup" >Operadores Lineares</p>
 <center >
 	$f:V\to W$ <br>(transforma um vetor em outro vetor)<br>
-	<img src="../images/operador_linear.png" alt="" style="transform: translate(0,-5rem);">
+	<img src="../images/operador_linear.png" width="500">
 		
 			</center> 
 
@@ -956,9 +999,234 @@ $$
 <center >
 	<p>Representação matricial:</p>
 
-				$$f\{\vec v\}=Fv$$ 
+				$$\vec w = f\{\vec v\}$$ 
 				
 					
+						</center> 
+						<center class="fragment current-visible">
+						$$\Rightarrow\sum_{k=1}^n w_k\hat e_k = \sum_{p=1}^n v_pf\{\hat e_p\}$$ 
+						</center> 
+
+						<center class="fragment current-visible">
+							$$\langle \hat e_k , \sum_{k=1}^n w_k\hat e_k\rangle = \langle \hat e_k,\sum_{p=1}^n v_pf\{\hat e_p\}\rangle$$ 
+							</center> 
+
+							<center class="fragment current-visible">
+								$$\Rightarrow w_k =\langle \hat e_k, \sum_{p=1}^n v_pf\{\hat e_p\}\rangle $$ 
+								</center> 
+
+								<center class="fragment current-visible">
+									$$\Rightarrow w_k =\sum_{p=1}^nv_p\langle \hat e_k,  f\{\hat e_p\}\rangle $$ 
+									</center> 
+
+</div>
+
+</section>
+
+
+
+<section>
+
+
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >Operadores Lineares</p>
+<center >
+	<p>Representação matricial:</p>
+	$\vec w = f\{\vec v\}$ 
+
+				$$ \begin{split}
+				w_1&=\langle \hat e_1,f\{\hat{e}_1\}\rangle v_1+\cdots+\langle \hat e_1,f\{\hat{e}_n\}\rangle v_n \\
+				w_2&=\langle \hat e_2,f\{\hat{e}_1\}\rangle v_1+\cdots+\langle \hat e_2,f\{\hat{e}_n\}\rangle v_n \\
+				\vdots& \\
+				w_n&=\langle \hat e_n,f\{\hat{e}_1\}\rangle v_1+\cdots+\langle \hat e_n,f\{\hat{e}_n\}\rangle v_n \\
+				\end{split}$$ 
+				
+					
+						</center> 
+					
+	
+			
+
+</div>
+
+</section>
+
+
+
+<section>
+
+
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >Operadores Lineares</p>
+<center >
+	<p>Representação matricial:</p>
+	$\vec w = f\{\vec v\}$ 
+				$$ 
+				\begin{bmatrix}
+				w_1\\ 
+				w_2\\
+				\vdots \\
+				w_n
+				\end{bmatrix}=\begin{bmatrix}
+				\langle \hat e_1,f\{\hat{e}_1\}\rangle & \cdots & \langle \hat e_1,f\{\hat{e}_n\}\rangle \\ 
+				\langle \hat e_2,f\{\hat{e}_1\}\rangle & \cdots & \langle \hat e_2,f\{\hat{e}_n\}\rangle \\
+				\vdots& \ddots & \vdots \\
+				\langle \hat e_n,f\{\hat{e}_1\}\rangle & \cdots & \langle \hat e_n,f\{\hat{e}_n\}\rangle 
+				\end{bmatrix}\begin{bmatrix}
+				v_1\\ 
+				v_2\\
+				\vdots \\
+				v_n
+				\end{bmatrix}
+				$$
+						</center> 
+					
+	
+			
+
+</div>
+
+</section>
+
+
+
+<section>
+
+
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >Operadores Lineares</p>
+<center >
+	<p>Representação matricial:</p>
+	$\vec w = f\{\vec v\}$ 
+				$$ 
+				\underbrace{\begin{bmatrix}
+				w_1\\ 
+				w_2\\
+				\vdots \\
+				w_n
+				\end{bmatrix}}_{w}=\begin{bmatrix}
+				\langle \hat e_1,f\{\hat{e}_1\}\rangle & \cdots & \langle \hat e_1,f\{\hat{e}_n\}\rangle \\ 
+				\langle \hat e_2,f\{\hat{e}_1\}\rangle & \cdots & \langle \hat e_2,f\{\hat{e}_n\}\rangle \\
+				\vdots & \ddots & \vdots\\
+				\langle \hat e_n,f\{\hat{e}_1\}\rangle & \cdots & \langle \hat e_n,f\{\hat{e}_n\}\rangle 
+				\end{bmatrix}\underbrace{\begin{bmatrix}
+				v_1\\ 
+				v_2\\
+				\vdots \\
+				v_n
+				\end{bmatrix}}_{v}
+				$$
+						</center> 
+					
+	
+			
+
+</div>
+
+</section>
+
+
+
+<section>
+
+
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >Operadores Lineares</p>
+<center >
+	<p>Representação matricial:</p>
+	$\vec w = f\{\vec v\}$ 
+				$$ 
+				\underbrace{\begin{bmatrix}
+				w_1\\ 
+				w_2\\
+				\vdots \\
+				w_n
+				\end{bmatrix}}_{w}=\underbrace{\begin{bmatrix}
+				\langle \hat e_1,f\{\hat{e}_1\}\rangle & \cdots & \langle \hat e_1,f\{\hat{e}_n\}\rangle \\ 
+				\langle \hat e_2,f\{\hat{e}_1\}\rangle & \cdots & \langle \hat e_2,f\{\hat{e}_n\}\rangle \\
+				\vdots & \ddots & \vdots\\
+				\langle \hat e_n,f\{\hat{e}_1\}\rangle & \cdots & \langle \hat e_n,f\{\hat{e}_n\}\rangle 
+				\end{bmatrix}}_{F}\underbrace{\begin{bmatrix}
+				v_1\\ 
+				v_2\\
+				\vdots \\
+				v_n
+				\end{bmatrix}}_{v}
+				$$
+						</center> 
+					
+	
+			
+
+</div>
+
+</section>
+
+
+<section>
+
+
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >Operadores Lineares</p>
+<center >
+	<p>Representação matricial:</p>
+	$\vec w = f\{\vec v\}$ 
+	<p>&nbsp;</p>
+				$$ 
+				\Rightarrow w=Fv, \quad F\in \mathbb{C}^{n\times n}
+				$$
+						</center> 
+					
+	
+			
+
+</div>
+
+</section>
+
+
+
+<section>
+
+
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >Autovalores e Autovetores</p>
+<center >
+<p>Se $\vec v$ é <b>autovetor</b> de $f\{\cdot\}$ então:</p>
+				$$f\{\vec v\}=\lambda\vec v$$ 
+				ou
+				$$Fv=\lambda v$$ 
+					<p>em que $\lambda$ é o <b>autovalor</b> associado a $\vec v$.</p>
 						</center> 
 
 
@@ -978,12 +1246,7 @@ $$
 	<div class="slide-content">
 		 <p class="lightup" >Autovalores e Autovetores</p>
 <center >
-	<p>Representação matricial:</p>
-
-				$$f\{\vec v\}=\lambda v$$ 
-				ou
-				$$Fv=\lambda v$$ 
-					
+<p>Interpretação geométrica</p>
 						</center> 
 
 
@@ -1003,21 +1266,119 @@ $$
 	</div>
 	<div class="slide-content">
 		 <p class="lightup" >Base de Autovetores</p>
-<center >
-	<p>Representação matricial:</p>
 
-				$$f\{\vec v\}=\lambda v$$ 
-				ou
-				$$Fv=\lambda v$$ 
+	<p align="left">Seja $A=\{\vec a_1, \vec a_2,\cdots,\vec a_n\}$ uma base ortogonal formada pelos autovetores do operador linear $f\{\cdot\}$. Então,</p>
+	<center class="fragment current-visible" >
+	$$ 
+	\underbrace{\begin{bmatrix}
+	w_1\\ 
+	w_2\\
+	\vdots \\
+	w_n
+	\end{bmatrix}}_{w}=\underbrace{\begin{bmatrix}
+	\langle \vec a_1,f\{\vec{a}_1\}\rangle & \cdots & \langle \vec a_1,f\{\vec{a}_n\}\rangle \\ 
+	\langle \vec a_2,f\{\vec{a}_1\}\rangle & \cdots & \langle \vec a_2,f\{\vec{a}_n\}\rangle \\
+	\vdots & \ddots & \vdots \\
+	\langle \vec a_n,f\{\vec{a}_1\}\rangle & \cdots & \langle \vec a_n,f\{\vec{a}_n\}\rangle 
+	\end{bmatrix}}_{F}\underbrace{\begin{bmatrix}
+	v_1\\ 
+	v_2\\
+	\vdots \\
+	v_n
+	\end{bmatrix}}_{v}
+	$$
 					
 						</center> 
 
+
+
+						<center class="fragment current-visible" >
+							$$ 
+							\underbrace{\begin{bmatrix}
+							w_1\\ 
+							w_2\\
+							\vdots \\
+							w_n
+							\end{bmatrix}}_{w}=\underbrace{\begin{bmatrix}
+							\langle \vec a_1,\lambda_1\vec{a}_1\rangle & \cdots & \langle \vec a_1,\lambda_n\vec{a}_n\rangle \\ 
+							\langle \vec a_2,\lambda_1\vec{a}_1\rangle & \cdots & \langle \vec a_2,\lambda_n\vec{a}_n\rangle \\
+							\vdots & \ddots & \vdots\\
+							\langle \vec a_n,\lambda_1\vec{a}_1\rangle & \cdots & \langle \vec a_n,\lambda_n\vec{a}_n\rangle 
+							\end{bmatrix}}_{F}\underbrace{\begin{bmatrix}
+							v_1\\ 
+							v_2\\
+							\vdots  \\
+							v_n
+							\end{bmatrix}}_{v}
+							$$
+											
+												</center> 
+
+												<center class="fragment current-visible" >
+													$$ 
+													\underbrace{\begin{bmatrix}
+													w_1\\ 
+													w_2\\
+													\vdots \\
+													w_n
+													\end{bmatrix}}_{w}=\underbrace{\begin{bmatrix}
+													\lambda_1\langle \vec a_1,\vec{a}_1\rangle & \cdots & \lambda_n\langle \vec a_1,\vec{a}_n\rangle \\ 
+													\lambda_1\langle \vec a_2,\vec{a}_1\rangle & \cdots & \lambda_n\langle \vec a_2,\vec{a}_n\rangle \\
+													\vdots & \ddots & \vdots\\
+													\lambda_1\langle \vec a_n,\vec{a}_1\rangle & \cdots & \lambda_n\langle \vec a_n,\vec{a}_n\rangle 
+													\end{bmatrix}}_{F}\underbrace{\begin{bmatrix}
+													v_1\\ 
+													v_2\\
+													\vdots  \\
+													v_n
+													\end{bmatrix}}_{v}
+													$$
+																	
+																		</center> 												
+																		<center class="fragment current-visible" >
+																			$$ 
+																			\underbrace{\begin{bmatrix}
+																			w_1\\ 
+																			w_2\\
+																			\vdots \\
+																			w_n
+																			\end{bmatrix}}_{w}=\underbrace{\begin{bmatrix}
+																			\lambda_1 & 0 &\cdots & 0 \\ 
+																			0 & \lambda_2 &\cdots & 0 \\
+																			\vdots  &\vdots & \ddots & \vdots\\
+																			0 & 0&  \cdots & \lambda_n
+																			\end{bmatrix}}_{F}\underbrace{\begin{bmatrix}
+																			v_1\\ 
+																			v_2\\
+																			\vdots  \\
+																			v_n
+																			\end{bmatrix}}_{v}
+																			$$
+																							
+																								</center> 	
 
 </div>
 
 </section>
 
 
+<section>
+
+	<div class="slide-title">
+		<h2>Operação Inversa</h2>
+	</div>
+	<div class="slide-content">
+		<center>
+			<p>$\vec w = f\{\vec v\}$</p>
+			<p>
+				Dado $\vec w$, obter $$\vec v=f^{-1}\{\vec w\}$$
+			</p>
+
+		
+</center>
+	   </div>
+
+</section>
 
 
 
@@ -1096,45 +1457,8 @@ $$
 		<script src="../../plugin/markdown/markdown.js"></script>
 		<script src="../../plugin/highlight/highlight.js"></script>
 		<script src="../../plugin/math/math.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				width: 1244,
-  				height: 700,
-				center:false,
-				katex: {
-    version: 'latest',
-    delimiters: [
-      {left: '$$', right: '$$', display: true},
-      {left: '$', right: '$', display: false},
-      {left: '\\(', right: '\\)', display: false},
-      {left: '\\[', right: '\\]', display: true}
-   ],
-   ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-   macros: {
-	"\\R": "\\mathbb{R}",
-	"\\trp": "\\intercal",
-	"\\diag": "\\text{diag}",
-	"\\Diag": "\\text{Diag}",
-	"\\tr": "\\text{tr}"
-   }
- },
-				hash: true,
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
-				controls: true,
-				controlsLayout: 'edges',
-				progress: false,
-				transition: 'none'
-			});
-		//////remove slide number from first page (data-hide-slide-number="true")
-	    Reveal.addEventListener('slidechanged', (event) => {
-  		const isSnOn = (event.currentSlide.dataset.hideSlideNumber !== 'true');
-  		Reveal.configure({ slideNumber: isSnOn });
-		});
-		</script>
+		<script src="../../init.js"></script>
+		
 	</body>
 </html>
 
