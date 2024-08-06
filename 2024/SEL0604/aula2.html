@@ -75,7 +75,7 @@
 					<div class="logo"><img src="../images/sel.png"/> </div>
 					<div class="logo2"><img src="../images/usp.png"/> </div>
 					<div class="title">
-					<h2>Aula 2: <br>Revisão de Álgebra</h2>
+					<h2>Aula 2: <br>(Continuação) Revisão de Álgebra Linear<br>SEL0604</h2>
 					</div>
 					<div class="author">
 					<h3>Prof. Marcos Rogério Fernandes</h3>
@@ -86,6 +86,31 @@
 				</div>
 
 				</section>
+
+
+				<section>
+
+					<div class="slide-title">
+						<h2>Aula anterior
+						</h2>
+					</div>
+					<div class="slide-content">
+				
+				<center>
+					<ul>
+						<li><b>Conceitos básicos</b> de sinais e sistemas;</li>
+						<li><b>Exemplos</b> de aplicação de sinais e sistemas;</li>
+						<li>Funções <b>especiais</b>;</li>
+						<li>Definição de <b>vetor</b>;</li>
+						<li>Definição de <b>produto escalar</b>;</li>
+						<li>Bases <b>ortonormais</b>;</li>
+					</ul>
+					</center>
+					
+				</div>
+				
+			</section>
+
 				<section>
 
 				<div class="slide-title">
@@ -94,300 +119,18 @@
 				<div class="slide-content">
 					<p>Os objetivos dessa aula são:
 							<ul>
-							<li>Fazer rápida revisão de <b>álgebra linear</b>;</li> 
-							<li>Rever o <b>produto escalar</b> e <b>norma</b> de vetores;</li>
 							<li><b>Mudança de base</b> de representação de vetores;</li>
-							<li>Noção de <b>projeção</b> de vetores;</li>
-							<li>Conceituar o <b>Operador linear</b>;</li>
+							<li><b>Operadores lineares</b>;</li>
 							<li><b>Autovalores e Autovetores</b> de Operadores Lineares;</li>
 							<li><b>Base</b> de Autovetores.</li>
+						
 						</p>
 						</div>
 
 			</section>
 
 
-			<section>
-
-					<div class="slide-title">
-						<h2>Revisão de Álgebra Linear
-						</h2>
-					</div>
-					<div class="slide-content">
-						 <p class="lightup" >O que é um vetor?</p>
-						<center class="fragment current-visible">
-							$$\vec{v}=\sum_{i=1}^n v_i \hat{e}_i\in V$$
-							<p>$V$ é um espaço vetorial (ex: $\mathbb{R}^n$);</p>
-							<p>$E=\{\hat{e}_1,\ldots,\hat{e}_n\}$ é uma <b>base de representação</b>;</p>
-							<p>$\{v_1,\ldots,v_n\}$ são as <b>coordenadas</b> em relação a base $E$.</p>
-					</center>
-
-					<center class="fragment current-visible">
-						$$\vec{v}=v_1 \hat{e}_1+v_2 \hat{e}_2+v_3 \hat{e}_3$$
-						<img src="../images/vetor_3d.png" width="400">
-				</center>
-				<center class="fragment current-visible">
-					$$\vec{v}=v_1 \hat{e}_1+v_2 \hat{e}_2+v_3 \hat{e}_3$$
-					<img src="../images/vetor_3d1.png" width="400">
-			</center>
-			<center class="fragment current-visible">
-				$$\vec{v}=v_1 \hat{e}_1+v_2 \hat{e}_2+v_3 \hat{e}_3$$
-				<img src="../images/vetor_3d2.png" width="400">
-		</center>
-		<center class="fragment current-visible">
-			$$\vec{v}=v_1 \hat{e}_1+v_2 \hat{e}_2+v_3 \hat{e}_3$$
-			<img src="../images/vetor_3d3.png" width="400">
-	</center>
-
-	<center class="fragment current-visible">
-		$$\vec{v}=v_1 \hat{e}_1+v_2 \hat{e}_2+v_3 \hat{e}_3$$
-		<img src="../images/vetor_3d.png" width="400">
-</center>
-
-
-<center class="fragment current-visible">
-	$$\vec{v}=\|\vec{v}\|\hat{a}_1$$
-	<img src="../images/vetor_3d_baseA.png" width="400" style="transform: translate(0,-3rem);">
-</center>
-
-<center class="fragment current-visible">
-	$$\vec{v}=\|\vec{v}\|\hat{a}_1$$
-	<img src="../images/vetor_3d_baseA2.png" width="400" style="transform: translate(0,-3rem);">
-</center>
-					
-			</div>
-
-		</section>
-
-
-		<section>
-
-			<div class="slide-title">
-				<h2>Revisão de Álgebra Linear
-				</h2>
-			</div>
-			<div class="slide-content">
-				 <p class="lightup" >O que é um produto escalar?</p>
-				<center>
-				<ul><li class="fragment">Resultado é um Escalar:
-					$$\langle \vec v, \vec w\rangle = c, \text{ com } c \text{ é um escalar.}$$</li>
-				<li class="fragment">Linear pela direita:
-					$$\langle \vec v, (\alpha \vec w_1 + \beta \vec w_2)\rangle = \alpha\langle \vec v,\vec w_1\rangle + \beta \langle \vec v,\vec w_2\rangle $$
-
-				</li>
-				</ul>
-			</center>
-
-						
-			
-	</div>
-
-</section>
-
-
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Revisão de Álgebra Linear
-		</h2>
-	</div>
-	<div class="slide-content">
-		 <p class="lightup" >O que é um produto escalar?</p>
-
-	<center>
-		<ul><li>Comutação:
-			$$\langle \vec v, \vec w\rangle = \langle\vec  w, \vec v\rangle ^*$$
-		</li>
-		<p class="fragment">
-		Consequência $\Rightarrow $ combinação linear pela esquerda:
-			$$\langle (\alpha\vec  v_1 + \beta \vec v_2), w\rangle = \alpha^*\langle\vec  v_1,\vec w\rangle + \beta^* \langle \vec v_2,\vec w\rangle  $$
-		</p>
-		</li>
-		</ul>
-	</center>
-
-	
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Revisão de Álgebra Linear
-		</h2>
-	</div>
-	<div class="slide-content">
-		 <p class="lightup" >Combinação linear direita/esquerda</p>
-
-	<center>
-		Direita:
-		$$\langle \vec v, (\alpha \vec w_1 + \beta \vec w_2)\rangle = \alpha\langle \vec v,\vec w_1\rangle + \beta \langle \vec v,\vec w_2\rangle $$
-		Esquerda:
-		$$\langle (\alpha\vec  v_1 + \beta \vec v_2), w\rangle = \alpha^*\langle\vec  v_1,\vec w\rangle + \beta^* \langle \vec v_2,\vec w\rangle  $$
-	</center>
-
-	
-	
-</div>
-
-</section>
-
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Revisão de Álgebra Linear
-		</h2>
-	</div>
-	<div class="slide-content">
-		 <p class="lightup" >O que é uma norma?</p>
 		
-
-	<center class="fragment current-visible">
-			
-		$$
-		\|\vec a-\vec b\|=\sqrt{\langle \vec a-\vec b, \vec a-\vec b\rangle}
-		$$
-		<p>Medida de <b>distância</b> dentro do espaço vetorial<br><img src="../images/espaco_vetorial_norma_ab.png" width="300"></p>
-		
-	</center>
-
-	<center class="fragment current-visible">
-			
-		$$
-		\|\vec v\|=\sqrt{\langle \vec v, \vec v\rangle}
-		$$
-		<p>Medida de <b>tamanho</b> de um vetor</p>
-
-		
-		<img src="../images/espaco_vetorial_norma.png" width="300">
-	</center>
-
-	<center class="fragment current-visible">
-			
-		$$
-		\|\vec v\|=\sqrt{\langle \vec v, \vec v\rangle}
-		$$
-		<p>Se $\|\vec v\|=1$ então $\vec v$ é dito ser <b>vetor unitário</b> e é denotado por $\hat{v}$.</p>
-
-		
-		<img src="../images/espaco_vetorial_norma.png" width="300">
-	</center>
-	
-	
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Revisão de Álgebra Linear
-		</h2>
-	</div>
-	<div class="slide-content">
-		 <p class="lightup" >O que é uma projeção?</p>
-
-	<center class="fragment current-visible">
-			
-		$$
-		 \langle \vec a, \vec b\rangle \rightarrow \text{medida de projeção}
-		$$
-		<img src="../images/projecao_vetor.png" width="450" style="transform: translate(0,0rem);">
-	</center>
-
-	<center class="fragment current-visible">
-			
-		$$
-		 \text{proj}_{\vec b}~\vec a = \frac{\langle \vec a, \vec b\rangle^* }{\|\vec b\|^2} \vec b
-		$$
-		<img src="../images/projecao_vetor.png" width="350">
-	</center>
-	
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Revisão de Álgebra Linear
-		</h2>
-	</div>
-	<div class="slide-content">
-		 <p class="lightup" >O que é ortogonalidade?</p>
-		
-		 <center class="fragment current-visible"r>
-			
-			$$
-			\vec a \perp \vec b \Leftrightarrow \text{proj}_{\vec b}~ \vec a=\vec 0
-			$$
-			<img src="../images/ortogonalidade.png" width="250" style="transform: translate(0,0rem);">
-		</center>
-	
-	<center class="fragment current-visible"r>
-			
-		$$
-		\vec a \perp \vec b \Leftrightarrow \langle \vec a, \vec b\rangle=0
-		$$
-		<img src="../images/ortogonalidade.png" width="250" style="transform: translate(0,0rem);">
-	</center>
-	
-</div>
-
-</section>
-
-
-<section>
-
-	<div class="slide-title">
-		<h2>Revisão de Álgebra Linear
-		</h2>
-	</div>
-	<div class="slide-content">
-		 <p class="lightup" >O que é uma base ortogonal?</p>
-		
-		 <center class="fragment current-visible"r>
-					<img src="../images/espaco_vetorial.png" width="500">
-		</center>
-	
-
-<center class="fragment current-visible"r>
-	
-	$$\vec a_1 \perp \vec a_2 \perp \vec a_3 \cdots \perp \vec a_n$$
-	<img src="../images/espaco_vetorial_base.png" width="450">
-</center>
-
-</section>
-
-<section>
-
-	<div class="slide-title">
-		<h2>Revisão de Álgebra Linear
-		</h2>
-	</div>
-	<div class="slide-content">
-		 <p class="lightup" >O que é uma base ortonormal?</p>
-<center>
-	
-	$$\hat a_1 \perp \hat a_2 \perp \hat a_3 \cdots \perp \hat a_n$$
-	<img src="../images/espaco_vetorial_base_unitaria.png" width="450">
-</center>
-	
-</div>
-
-</section>
-
 
 <section>
 
@@ -509,7 +252,7 @@ $$
 \vec v = v_1\hat{e}_1+v_2\hat e_2+\cdots +v_n \hat e_n
 $$
 	$$
-	v = \begin{bmatrix} v_1\\ v_2 \\ \vdots \\ v_n \end{bmatrix}
+	v^E = v = \begin{bmatrix} v_1\\ v_2 \\ \vdots \\ v_n \end{bmatrix}
 	$$
 	</center>
 
@@ -538,7 +281,7 @@ $$
 		</h2>
 	</div>
 	<div class="slide-content">
-		 <p class="lightup" >Produto escalar não depende da base!</p>
+		 <p class="lightup" >Produto escalar na base canônica</p>
 <center class="fragment">
 $$
 \langle \vec v, \vec w \rangle = \langle \sum_{k=1}^n v_k\hat e_k, \sum_{p=1}^n w_p\hat e_p \rangle
@@ -612,7 +355,7 @@ $$
 \langle \vec v, \vec w \rangle = \langle \sum_{k=1}^n v_k\hat e_k, \sum_{p=1}^n w_p\hat e_p \rangle
 $$
 	$$
-	 =  \sum_{k=1}^n  v_k^*w_k\quad \square
+	 =  \sum_{k=1}^n  v_k^*w_k.
 	$$
 	</center>
 
@@ -634,15 +377,10 @@ $$
 		 <p class="lightup" >Mudança de base</p>
 <center class="fragment">
 <p align="left">Considere duas bases ortonormais:</p>
-<p>$A=\{\hat a_1,\cdots,\hat a_n\}$ e $B=\{\hat b_1,\cdots,\hat b_n\}$</p>
+<p>$$A=\{\hat a_1,\cdots,\hat a_n\}$$ e $$B=\{\hat b_1,\cdots,\hat b_n\}$$</p>
 
 </center>
-<center class="fragment current-visible">
-	<p align="left">Então, um vetor $\vec v$ pode ser escrito como:</p>
-	$$
-\vec v = \underbrace{\alpha_1\hat a_1+\cdots+\alpha_n\hat a_n}_{\text{base A}} = \underbrace{\beta_1\hat b_1+\cdots+\beta_n\hat b_n}_{\text{base B}}
-$$
-	</center>
+
 
 
 
@@ -661,11 +399,60 @@ $$
 	<div class="slide-content">
 		 <p class="lightup" >Mudança de base</p>
 <center>
+	<p align="left">Então, um vetor $\vec v$ pode ser escrito como:</p>
 
-<p align="left">Dado as coordenadas em $A$, quais as coordenadas em $B$?</p>
+$$
+\vec v = \alpha_1\hat a_1+\cdots+\alpha_n\hat a_n = \beta_1\hat b_1+\cdots+\beta_n\hat b_n
+$$
+
+</center>
+
+
+
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >Mudança de base</p>
+<center>
+	<p align="left">Então, um vetor $\vec v$ pode ser escrito como:</p>
+
 $$
 \vec v = \underbrace{\alpha_1\hat a_1+\cdots+\alpha_n\hat a_n}_{\text{base A}} = \underbrace{\beta_1\hat b_1+\cdots+\beta_n\hat b_n}_{\text{base B}}
 $$
+
+</center>
+
+
+
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >Mudança de base</p>
+<center>
+	<p align="left">Então, um vetor $\vec v$ pode ser escrito como:</p>
+
+$$
+\vec v = \underbrace{\alpha_1\hat a_1+\cdots+\alpha_n\hat a_n}_{\text{base A}} = \underbrace{\beta_1\hat b_1+\cdots+\beta_n\hat b_n}_{\text{base B}}
+$$
+<p align="left">Dado as coordenadas em $A$, quais as coordenadas em $B$?</p>
 </center>
 
 
@@ -685,18 +472,22 @@ $$
 	<div class="slide-content">
 		 <p class="lightup" >Mudança de base</p>
 
-<center >
-	<p align="left">Dado as coordenadas em $A$, quais as coordenadas em $B$?</p>
-	$$
-\hat b_i^A = \begin{bmatrix} b_{i,1} \\ b_{i,2}\\ \vdots \\ b_{i,n} \end{bmatrix},\quad \forall i=1,\ldots,n
-	$$
+<center class="fragment current-visible">
+	<img src="../images/vetor_3d_mudanca_base.png" alt="">
 
 	</center> 
+
+	<center class="fragment current-visible">
+		<img src="../images/vetor_3d_mudanca_base2.png" alt="">
+	
+		</center> 
 
 
 </div>
 
 </section>
+
+
 
 
 
@@ -710,7 +501,7 @@ $$
 		 <p class="lightup" >Mudança de base</p>
 
 <center >
-	<p align="left">Dado as coordenadas em $A$, quais as coordenadas em $B$?</p>
+	<p align="left">Suponha que as coordenadas dos vetores da base $B$ são conhecidas em relação a base $A$.</p>
 	$$
 \hat b_i = \sum_{k=1}^n b_{i,k} \hat a_k,\quad \forall i=1,\ldots,n
 	$$
@@ -721,6 +512,9 @@ $$
 </div>
 
 </section>
+
+
+
 
 
 <section>
@@ -756,6 +550,31 @@ $$
 		
 			</center> 
 
+
+</div>
+
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >Mudança de base</p>
+
+<center >
+	<p align="left">Dado as coordenadas em $A$, quais as coordenadas em $B$?</p>
+	$$
+\Rightarrow \beta_i = \sum_{k=1}^n b_{i,k}^* \alpha_{k} 
+	$$
+
+	</center> 
+
+	
 
 </div>
 
@@ -921,9 +740,16 @@ $$
 <center >
 	<p align="left">Dado as coordenadas em $A$, quais as coordenadas em $B$?</p>
 	$$
-	v^B=T_A^B v^A
+	v^B=T_A^B v^A,
 	$$
-		
+
+		$$
+		T_A^B=\begin{bmatrix}
+		- & \hat b_1^\trp  & - \\
+				& \vdots & \\
+		- & \hat b_n^\trp &  - \\
+	   \end{bmatrix}.
+		$$
 			</center> 
 
 
@@ -942,7 +768,7 @@ $$
 	<div class="slide-content">
 		 <p class="lightup" >Operadores Lineares</p>
 <center >
-	$f:V\to W$ <br>(transforma um vetor em outro vetor)<br>
+	$f:V\mapsto W$ <br>(transforma um vetor em outro vetor)<br>
 	<img src="../images/operador_linear.png" width="500">
 		
 			</center> 
@@ -985,6 +811,32 @@ $$
 </section>
 
 
+<section>
+
+
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >Operadores Lineares</p>
+<center >
+<p>Se</p>
+	$$f_i=f\{\hat{a}_i\}, \forall i=1,\ldots,n$$ 
+	 então
+
+				$$f\{\vec v\}=\alpha_1f_1+\alpha_2f_2+\cdots+\alpha_nf_n$$ 
+				
+					
+						</center> 
+
+
+</div>
+
+</section>
+
+
 
 <section>
 
@@ -1004,11 +856,11 @@ $$
 					
 						</center> 
 						<center class="fragment current-visible">
-						$$\Rightarrow\sum_{k=1}^n w_k\hat e_k = \sum_{p=1}^n v_pf\{\hat e_p\}$$ 
+						$$\Rightarrow\sum_{m=1}^n w_m\hat e_m= \sum_{p=1}^n v_pf\{\hat e_p\}$$ 
 						</center> 
 
 						<center class="fragment current-visible">
-							$$\langle \hat e_k , \sum_{k=1}^n w_k\hat e_k\rangle = \langle \hat e_k,\sum_{p=1}^n v_pf\{\hat e_p\}\rangle$$ 
+							$$\langle \hat e_k , \sum_{m=1}^n w_m\hat e_m\rangle = \langle \hat e_k,\sum_{p=1}^n v_pf\{\hat e_p\}\rangle$$ 
 							</center> 
 
 							<center class="fragment current-visible">
@@ -1195,11 +1047,12 @@ $$
 		 <p class="lightup" >Operadores Lineares</p>
 <center >
 	<p>Representação matricial:</p>
-	$\vec w = f\{\vec v\}$ 
+	$ 
+				 w=Fv,
+				$
 	<p>&nbsp;</p>
-				$$ 
-				\Rightarrow w=Fv, \quad F\in \mathbb{C}^{n\times n}
-				$$
+	em que $F\in \mathbb{C}^{n\times n}$.
+				
 						</center> 
 					
 	
@@ -1247,12 +1100,36 @@ $$
 		 <p class="lightup" >Autovalores e Autovetores</p>
 <center >
 <p>Interpretação geométrica</p>
+<img src="../images/vetor_3d_autovetor.png" alt="">
 						</center> 
 
 
 </div>
 
 </section>
+
+
+<section>
+
+
+
+	<div class="slide-title">
+		<h2>Revisão de Álgebra Linear
+		</h2>
+	</div>
+	<div class="slide-content">
+		 <p class="lightup" >Autovalores e Autovetores</p>
+<center >
+<p>Interpretação geométrica</p>
+<img src="../images/vetor_3d_autovetor2.png" alt="">
+						</center> 
+
+
+</div>
+
+</section>
+
+
 
 
 
@@ -1369,16 +1246,58 @@ $$
 	</div>
 	<div class="slide-content">
 		<center>
-			<p>$\vec w = f\{\vec v\}$</p>
 			<p>
-				Dado $\vec w$, obter $$\vec v=f^{-1}\{\vec w\}$$
+				$$\vec v=f^{-1}\{\vec w\}$$
 			</p>
+			<img src="../images/operador_linear_inversa.png" alt="">
 
 		
 </center>
 	   </div>
 
 </section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Operação Inversa</h2>
+	</div>
+	<div class="slide-content">
+		<center>
+			$$
+			\begin{split}
+			\underbrace{\begin{bmatrix}
+							v_1\\ 
+							v_2\\
+							\vdots \\
+							v_n
+							\end{bmatrix}}_{v}=\underbrace{\begin{bmatrix}
+							\frac{1}{\lambda_1} &  0 & \cdots & 0\\
+							0 & \frac{1}{\lambda_2} & \cdots & 0\\ 
+							\vdots & \vdots & \ddots & \vdots \\
+							0 & 0 & \cdots & \frac{1}{\lambda_n}
+							\end{bmatrix}}_{F}
+			\underbrace{\begin{bmatrix}
+							w_1\\ 
+							w_2\\
+							\vdots \\
+							w_n
+							\end{bmatrix}}_{w}
+			\end{split} 
+
+		$$
+		ou, olhando para cada coordenada,
+		$$
+			v_i=\frac{1}{\lambda_i}w_i,\quad \forall i=1,\ldots, n
+		$$
+</center>
+	   </div>
+
+</section>
+
+
+
 
 
 
@@ -1405,11 +1324,9 @@ $$
 							<p>&nbsp;</p>
 			
 					<h3>
-						Espaço de funções e representação no tempo
+						Espaço de funções
 					</h3>
-					$$
-					\delta(t)=\frac{1}{2\pi}\int_{-\infty}^\infty e^{j\omega t}d\omega 
-					$$
+					
 								
 				</center>
 					   </div>
