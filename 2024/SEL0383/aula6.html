@@ -1,0 +1,826 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>SEL0383 - Sinais e Sistemas</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../../plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="../style.css">
+
+		<script
+		type="text/javascript"
+		src="../../dist/vis-graph3d.min.js"
+	  ></script>
+	  <!-- <script type="text/javascript">
+		var data = null;
+		var graph = null;
+  
+	
+		// Called when the Visualization API is loaded.
+		function drawVisualization() {
+		  // Create and populate a data table.
+		  data = new vis.DataSet();
+		  // create some nice looking data with sin/cos
+		  var counter = 0;
+		  var steps = 1000; // number of datapoints will be steps*steps
+		  var axisMax = 20;
+		  var axisStep = axisMax / steps;
+		  for (var t = 0*axisStep; t < axisMax; t += axisStep) {
+			  data.add({ id: counter++, y: Math.cos(t), x: t, z:Math.sin(t), style: t });
+		  }
+  
+		  // specify options
+		  var options = {
+			width: "600px",
+			height: "600px",
+			style: "line",
+			dataColor: '#ff0000',
+			showPerspective: false,
+			showGrid: true,
+			showShadow: false,
+			keepAspectRatio: false,
+			verticalRatio: 1,
+			xLabel: "t",
+			zLabel: "Imaginário",
+			yLabel: "Real",
+			showAnimationControls 	: true
+		  };
+  
+		  // Instantiate our graph object.
+		  var container = document.getElementById("mygraph");
+		  graph = new vis.Graph3d(container, data, options);
+		  graph.setCameraPosition({horizontal: -1.57, vertical: 0, distance: 1.5});
+
+
+		  var container = document.getElementById("mygraph2");
+		  graph = new vis.Graph3d(container, data, options);
+		  graph.setCameraPosition({horizontal: -0.5, vertical: 0.5, distance: 1.5});
+		}
+	  </script> -->
+	</head>
+	<!-- <body onload="drawVisualization();"> -->
+		<body>
+		
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-hide-slide-number="true" data-transition="slide">
+					<div class="logo"><img src="../images/sel.png"/> </div>
+					<div class="logo2"><img src="../images/usp.png"/> </div>
+					<div class="title">
+					<h2>Aula 6: <br>Séries de Fourier: exemplos e propriedades<br>SEL0383</h2>
+					</div>
+					<div class="author">
+					<h3>Prof. Marcos Rogério Fernandes</h3>
+				</div>
+					<div class="advisor">
+					
+					<p style="text-align: center;font-size: 0.8em;">20 de agosto de 2024</p>
+				</div>
+
+				</section>
+
+						
+			<section>
+
+				<div class="slide-title">
+					<h2>Objetivos
+					</h2>
+				</div>
+				<div class="slide-content">
+					<p>&nbsp;</p>
+			
+					<ul>
+						<li>Séries de Fourier forma cosseno-seno;</li>
+						<li>Serie de Fourier na forma Complexa;</li>
+						<li>Teorema de Parseval;</li>
+						<li>Espectro de Fourier</li>
+						<li>*Exemplos</li>
+					
+					</ul>
+				
+			</div>
+			
+		</section>
+
+
+
+	
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Contribuição de Fourier</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<img src="../images/joseph_fourier.webp" alt=""><br>
+					(1768-1830)
+					<p>Todo sinal periódico (absolutamente integrável e com número finito de máximos e mínimos) pode ser representado através da soma de cossenos e senos.</p>
+		
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Série de Fourier (cossenos e senos)</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<img src="../images/joseph_fourier.webp" alt=""><br>
+					<p class="lightup">
+						$$
+						g(t)=a_0+\sum_{n=1}^\infty a_n\cos(n\omega_0t)+b_n\sin(n\omega_0t)
+						$$
+				</p>
+		
+		</center>
+			   </div>
+
+		</section>
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Base de Fourier</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<img src="../images/joseph_fourier.webp" alt=""><br>
+					<p class="lightup">
+						$$
+						B=\{1,\cos(n\omega_0t),\sin(n\omega_0t),\forall n\in\mathbb{N}\}
+						$$
+				</p>
+		
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Coeficientes de Fourier</h2>
+			</div>
+			<div class="slide-content">
+				Suponha $g:\mathbb{R}\to\mathbb{R}$, periódica e contínua em [0,T], então
+				<center>
+					$$a_0=\frac{\langle g, 1\rangle}{\|1\|^2}=\frac{1}{T}\int_0^T g(t)dt$$
+		
+		</center>
+			   </div>
+
+		</section>
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Coeficientes de Fourier</h2>
+			</div>
+			<div class="slide-content">
+				Suponha $g:\mathbb{R}\to\mathbb{R}$, periódica e contínua em [0,T], então
+				<center>
+					$$a_0=\frac{\langle g, 1\rangle}{\|1\|^2}=\frac{1}{T}\int_0^T g(t)dt$$
+
+					$$a_n=\frac{\langle g, \cos(n\omega_0t)\rangle}{\|\cos(n\omega_0t)\|^2}=\frac{2}{T}\int_0^T g(t)\cos(n\omega_0 t)dt$$
+		
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Coeficientes de Fourier</h2>
+			</div>
+			<div class="slide-content">
+				Suponha $g:\mathbb{R}\to\mathbb{R}$, periódica e contínua em [0,T], então
+				<center>
+					$$a_0=\frac{\langle g, 1\rangle}{\|1\|^2}=\frac{1}{T}\int_0^T g(t)dt$$
+
+					$$a_n=\frac{\langle g, \cos(n\omega_0t)\rangle}{\|\cos(n\omega_0t)\|^2}=\frac{2}{T}\int_0^T g(t)\cos(n\omega_0 t)dt$$
+					$$b_n=\frac{\langle g, \sin(n\omega_0t)\rangle}{\|\sin(n\omega_0t)\|^2}=\frac{2}{T}\int_0^T g(t)\sin(n\omega_0 t)dt$$
+		
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Exponencial Complexa</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+			
+		$$
+					\cos(x)=\frac{e^{jx}+e^{-jx}}{2}
+		$$
+
+		$$
+					\sin(x)=\frac{e^{jx}-e^{-jx}}{2j}
+		$$
+		
+		</center>
+			   </div>
+
+		</section>
+
+
+		
+		<section>
+
+			<div class="slide-title">
+				<h2>Série de Fourier</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+			
+				
+		$$
+					g(t)=a_0+\sum_{n=1}^\infty a_n\Bigl(\frac{e^{jn\omega_0t}+e^{-jn\omega_0t}}{2}\Bigr)+b_n\Bigl(\frac{e^{jn\omega_0t}-e^{-jn\omega_0t}}{2j}\Bigr)
+					$$
+		</center>
+		<center class="fragment">
+			$$
+			=\sum_{n=-\infty}^\infty \Bigl(\frac{a_n-jb_n}{2}\Bigr)e^{jn\omega_0 t}
+			$$
+		</center>
+			   </div>
+
+		</section>
+
+				
+		<section>
+
+			<div class="slide-title">
+				<h2>Série de Fourier (Exponencial Complexa)</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+			
+				<p class="lightup">
+		$$
+					g(t)=\sum_{n=-\infty}^\infty c_n e^{jn\omega_0t}
+					$$
+				</p>
+					em que
+					$$
+					c_n=\frac{a_n-jb_n}{2}
+					$$
+		</center>
+			   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Representação de Fourier</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<p class="lightup">
+						$$
+						G=\Bigl\{g_n(t)=e^{jn\omega_0 t}:\omega_0=\frac{2\pi}{T}, n\in\mathbb{Z}\Bigr\}
+						$$
+					</p>
+		
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Representação de Fourier</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<p class="lightup">
+						$$
+						G=\Bigl\{g_n(t)=e^{jn\omega_0 t}:\omega_0=\frac{2\pi}{T}, n\in\mathbb{Z}\Bigr\}
+						$$
+					</p>
+					$$
+					\langle e^{jn\omega_0 t}, e^{jm\omega_0 t} \rangle = \begin{cases}
+					T, \text{ se } n=m\\
+					0, \text{ caso contrário.} 
+					\end{cases}
+					$$
+		</center>
+		<p align="center" class="fragment"><b>É uma base ortogonal!</b></p>
+			   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Representação de Fourier</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<p class="lightup">
+						$$
+						G=\Bigl\{g_n(t)=e^{jn\omega_0 t}:\omega_0=\frac{2\pi}{T}, n\in\mathbb{Z}\Bigr\}
+						$$
+					</p>
+					$$
+					g(t)=\sum_{n=-\infty}^\infty c_n e^{jn\omega_0 t}
+					$$
+		</center>
+		<p align="center" class="fragment">
+			
+			$$
+			c_n=\frac{\langle g, e^{jn\omega_0 t}\rangle^* }{\|e^{jn\omega_0 t}\|^2}
+			$$
+		</p>
+			   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Representação de Fourier</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<p class="lightup">
+						$$
+						G=\Bigl\{g_n(t)=e^{jn\omega_0 t}:\omega_0=\frac{2\pi}{T}, n\in\mathbb{Z}\Bigr\}
+						$$
+					</p>
+					$$
+					g(t)=\sum_{n=-\infty}^\infty c_n e^{jn\omega_0 t}
+					$$
+		</center>
+		<p align="center">
+			
+			$$
+			c_n=\frac{1}{T}\int_0^T g(t)e^{-jn\omega_0 t}dt
+			$$
+		</p>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Representação de Fourier (Real)</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<p>&nbsp;</p>
+					<p class="lightup">
+						Seja $g:\mathbb{R}\to\mathbb{R}$, uma função periódica, de período $T$, então
+					</p>
+					$$
+					g(t)=c_0+\sum_{n=1}^\infty c_n e^{jn\omega_0 t}+\Bigl(c_n e^{jn\omega_0 t}\Bigr)^*
+					$$
+		</center>
+		
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Representação de Fourier (Real)</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<p>&nbsp;</p>
+					<p class="lightup">
+						Seja $g:\mathbb{R}\to\mathbb{R}$, uma função periódica, de período $T$, então
+					</p>
+					$$
+					g(t)=c_0+\sum_{n=1}^\infty 2\mathcal{Re}\Bigl(c_n e^{jn\omega_0 t}\Bigr)
+					$$
+		</center>
+		
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Espectro de Fourier</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					Dado uma função periódica $g(t)$ com período $T$, cuja série de Fourier é 
+					$$
+					g(t)=\sum_{n=-\infty}^\infty c_ne^{jn\omega_0 t},
+					$$
+					então 
+					<p class="lightup">
+					$$
+					c_n=|c_n|e^{j\theta_n}
+					$$
+				</p>
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Espectro de Fourier: módulo</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<p class="lightup">
+					$$
+					c_n=|c_n|e^{j\theta_n}
+					$$
+				</p>
+				<img src="../images/espectro_fourier_mag.png" width="600">
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Espectro de Fourier: fase</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<p class="lightup">
+					$$
+					c_n=|c_n|e^{j\theta_n}
+					$$
+				</p>
+				<img src="../images/espectro_fourier_fase.png" width="600">
+		</center>
+			   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Espectro de Fourier: exemplo</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<p class="lightup">
+					$$
+					g(t)=1+\sin(\omega_0 t)+\cos(2\omega_0t),\quad \omega_0=\frac{2\pi}{T}
+					$$
+				</p>
+				<h3>Obtenha o espectro de módulo e fase de $g(t)$</h3>
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Exemplo 1: trem de pulsos</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					Considere a função periódica cujo primeiro período é dado por
+					$$
+					g(t)=\begin{cases} 
+					1,\text{ se } |t|\le \frac{a}{2}\\
+					0,\text{ se } \frac{a}{2}\le |t| \le \frac{T}{2}
+					\end{cases}
+					$$
+					A relação $w=\frac{a}{T}$ é chamado de <b>fator de ocupação</b>. Ex: a=1; T=4;
+	<img src="../images/trem_pulsos.png" width="750">
+		
+			
+						
+		</center>
+			   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Exemplo 1: trem de pulsos</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+				$$
+				c_n=\frac{a}{T}\text{sinc}\left(\frac{n\omega_0a}{2}\right)
+				$$
+		</center>
+		<center class="fragment lightup">
+			$$g(t)=\sum_{n=-\infty}^\infty \frac{a}{T}\text{sinc}\left(\frac{n\omega_0a}{2}\right)e^{jn\omega_0t}$$
+
+		</center>
+			   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Exemplo 2: trem de impulsos</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					Considere a função periódica dada por
+					$$
+					g(t)=\sum_{k=-\infty}^\infty \delta(t-kT)
+					$$
+	<img src="../images/trem_impulsos.png" width="750"><br>Ex: T=4
+		
+			
+						
+		</center>
+			   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Exemplo 2: trem de impulsos</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					$$
+c_n=\frac{1}{T},\forall n\in\mathbb{Z}
+					$$
+			
+					<center class="fragment lightup">
+						$$g(t)=\sum_{n=-\infty}^\infty \frac{1}{T}e^{jn\omega_0t}$$
+			
+					</center>
+		</center>
+			   </div>
+
+		</section>
+
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Exemplo 3: dente de serra</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					Considere a função periódica cujo primeiro período é dado por
+					$$
+					g(t)=at,\forall t:|t|\le \frac{T}{2}
+					$$
+	<img src="../images/dente_serra.png" width="750"><br>Ex: T=4
+		
+			
+						
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Exemplo 3: dente de serra</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+						$$
+						\begin{aligned}
+					c_0&=0\\
+					c_n&=\frac{a}{jn\omega_0}\cos(n\pi), \forall n\in\mathbb{Z}_{n\neq0}
+					\end{aligned}
+						$$
+		</center>
+
+		<center class="fragment lightup">
+			$$g(t)=\sum_{n\in\mathbb{Z}_{n\neq 0}} \frac{a}{jn\omega_0}\cos(n\pi)e^{jn\omega_0t}$$
+
+		</center>
+
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+
+				<h1>Parte II</h1>
+		</center>
+			   </div>
+
+		</section>
+
+
+		
+
+
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Valor Eficaz</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<p>&nbsp;</p>
+					Dado uma função periódica $g(t)$ com período $T$, então
+					$$
+					\|g(t)\|_\text{efz}=\sqrt{\frac{1}{T}\int_0^T |g(t)|^2dt}=\frac{1}{\sqrt{T}}\|g(t)\|
+					$$
+					<p>RMS=Root Mean Square</p>
+		</center>
+			   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Teorema de Parseval</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					Dado uma função periódica $g(t)$ com período $T$, cuja série de Fourier é 
+					$$
+					g(t)=\sum_{n=-\infty}^\infty c_ne^{jn\omega_0 t},
+					$$
+					então 
+					<p class="lightup">
+					$$
+					\|g(t)\|^2_\text{efz}=\sum_{n=-\infty}^\infty |c_n|^2
+					$$
+				</p>
+		</center>
+			   </div>
+
+		</section>
+
+
+		
+		<section>
+
+			<div class="slide-title">
+				<h2>Teorema de Parseval: exemplo</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					<p class="lightup">
+					$$
+					g(t)=1+\sin(\omega_0 t)+\cos(2\omega_0t),\quad \omega_0=\frac{2\pi}{T}
+					$$
+				</p>
+				<h3>Obtenha o valor eficaz de $g(t)$</h3>
+				$$
+\|g(t)\|^2_\text{efz}=?
+				$$
+		</center>
+			   </div>
+
+		</section>
+
+
+
+
+				<section>
+
+					<div class="slide-title">
+						<h2>Próxima aula</h2>
+					</div>
+					<div class="slide-content">
+						<center>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+			
+					<h3>
+						Propriedades das séries de Fourier 
+					</h3>
+					
+								
+				</center>
+					   </div>
+
+				</section>
+
+
+
+
+
+				<section>
+
+					<div class="slide-content">
+			<center>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+					<h2>
+						Até a próxima aula!
+					</h2>
+				</center>
+								
+					
+					   </div>
+
+				</section>
+
+
+
+
+		
+				
+			
+
+
+
+				<!------------------------>
+			</div>
+		</div>
+
+		
+
+		<script src="../../dist/reveal.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="../../plugin/highlight/highlight.js"></script>
+		<script src="../../plugin/math/math.js"></script>
+		<script src="../../init.js"></script>
+		
+	</body>
+</html>
+
