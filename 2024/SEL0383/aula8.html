@@ -243,7 +243,6 @@ $$
 				<p>&nbsp;</p>
 		
 				<ul>
-					   <li>Exemplos de Serie de Fourier na forma Complexa;</li>
 					   <li>Aplicação na solução de EDO</li>
 					<li>Exemplo em 2D;</li>
 				</ul>
@@ -318,10 +317,12 @@ $$
 		<center>
 			Força: 
 			$$
-			F(t)=d_0+\sum_{n=1}^\infty d_n\cos(n\omega_0 t)+m_n\sin(n\omega_0 t)
+			F(t)=\sum_{n=-\infty} d_ne^{jn\omega_0 t}
 			$$
 			Oscilação:
-		$$y(t)=a_0+\sum_{n=1}^\infty a_n \cos(n\omega_0 t)+b_n\sin(n\omega_0 t)$$
+		$$
+		y(t)=\sum_{n=-\infty} c_ne^{jn\omega_0 t}
+		$$
 	</center>
 	
 </div>
@@ -337,7 +338,7 @@ $$
 	</div>
 	<div class="slide-content">
 		<center>
-			Força: 
+
 			$$
 			\frac{d^2y}{dt^2}+2y=F(t)
 			$$
@@ -363,13 +364,13 @@ $$
 	</div>
 	<div class="slide-content">
 		<center>
-			Força: 
+	
 			$$
 			\frac{d^2y}{dt^2}+2y=F(t)
 			$$
 			em que 
 			$$
-			F(t)=\frac{1}{2}+\sum_{n=1}^\infty \frac{2}{(2n+1)\pi}\sin((2n+1)\pi t)
+			F(t)=\frac{1}{2}+\sum_{n=1}^\infty 2\mathcal{Re}\Bigl\{\underbrace{\Bigl(j\frac{1-(-1)^n}{2\pi n}\Bigr)}_{d_n}e^{jn\omega_0 t}\Bigr\}
 			$$
 	</center>
 	
@@ -386,39 +387,16 @@ $$
 	</div>
 	<div class="slide-content">
 		<center>
-			Oscilação: 		
+			
 			$$
-			y(t)=a_0+\sum_{n=1}^\infty b_{2n+1}\sin((2n+1)\pi t)
-			$$
-	</center>
-
-	<center>
-		$$
-		\frac{dy}{dt}=\sum_{n=1}^\infty b_{2n+1}(2n+1)\pi\cos((2n+1)\pi t)
-		$$
-	</center>
-	
-</div>
-
-</section>
-
-<section>
-
-	<div class="slide-title">
-		<h2>Solução de EDO: exemplo
-		</h2>
-	</div>
-	<div class="slide-content">
-		<center>
-			Oscilação: 		
-			$$
-			y(t)=a_0+\sum_{n=1}^\infty b_{2n+1}\sin((2n+1)\pi t)
+			\frac{d^2y}{dt^2}+2y=F(t)
 			$$
 	</center>
 
-	<center>
+	<center class="fragment">
 		$$
-		\frac{d^2y}{dt^2}=-\sum_{n=1}^\infty b_{2n+1}(2n+1)^2\pi^2\sin((2n+1)\pi t)
+		=\Bigl( -\sum_{n=-\infty}^\infty n^2\omega_0^2 c_n e^{j\omega_0 t}\Bigr)+2\Bigl( \sum_{n=-\infty}^\infty c_n e^{j\omega_0 t}\Bigr)\\
+		=\Bigl( \sum_{n=-\infty}^\infty d_n e^{j\omega_0 t}\Bigr)
 		$$
 	</center>
 	
@@ -441,10 +419,10 @@ $$
 			$$
 	</center>
 
-	<center>
+	<center class="lightup">
+		Solução estacionária:
 		$$
-		\Bigl(-\sum_{n=1}^\infty b_{2n+1}(2n+1)^2\pi^2\sin((2n+1)\pi t)\Bigr)\\+2\Bigl(a_0+\sum_{n=1}^\infty b_{2n+1}\sin((2n+1)\pi t)\Bigr)\\
-		=\frac{1}{2}+\sum_{n=1}^\infty \frac{2}{(2n+1)\pi}\sin((2n+1)\pi t)
+		y(t)=\frac{1}{4}+\sum_{n=1}^\infty 2\mathcal{Re}\Bigl\{j\frac{1-(-1)^n}{2\pi n(2-n^2\omega_0^2)}e^{jn\omega_0 t}\Bigr\}
 		$$
 	</center>
 	
