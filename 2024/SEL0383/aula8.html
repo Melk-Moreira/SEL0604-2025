@@ -1,0 +1,757 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>SEL0383 - Sinais e Sistemas</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../../plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="../style.css">
+
+		<script
+		type="text/javascript"
+		src="../../dist/vis-graph3d.min.js"
+	  ></script>
+	  <!-- <script type="text/javascript">
+		var data = null;
+		var graph = null;
+  
+	
+		// Called when the Visualization API is loaded.
+		function drawVisualization() {
+		  // Create and populate a data table.
+		  data = new vis.DataSet();
+		  // create some nice looking data with sin/cos
+		  var counter = 0;
+		  var steps = 1000; // number of datapoints will be steps*steps
+		  var axisMax = 20;
+		  var axisStep = axisMax / steps;
+		  for (var t = 0*axisStep; t < axisMax; t += axisStep) {
+			  data.add({ id: counter++, y: Math.cos(t), x: t, z:Math.sin(t), style: t });
+		  }
+  
+		  // specify options
+		  var options = {
+			width: "600px",
+			height: "600px",
+			style: "line",
+			dataColor: '#ff0000',
+			showPerspective: false,
+			showGrid: true,
+			showShadow: false,
+			keepAspectRatio: false,
+			verticalRatio: 1,
+			xLabel: "t",
+			zLabel: "Imaginário",
+			yLabel: "Real",
+			showAnimationControls 	: true
+		  };
+  
+		  // Instantiate our graph object.
+		  var container = document.getElementById("mygraph");
+		  graph = new vis.Graph3d(container, data, options);
+		  graph.setCameraPosition({horizontal: -1.57, vertical: 0, distance: 1.5});
+
+
+		  var container = document.getElementById("mygraph2");
+		  graph = new vis.Graph3d(container, data, options);
+		  graph.setCameraPosition({horizontal: -0.5, vertical: 0.5, distance: 1.5});
+		}
+	  </script> -->
+	</head>
+	<!-- <body onload="drawVisualization();"> -->
+		<body>
+		
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-hide-slide-number="true" data-transition="slide">
+					<div class="logo"><img src="../images/sel.png"/> </div>
+					<div class="logo2"><img src="../images/usp.png"/> </div>
+					<div class="title">
+					<h2>Aula 8: <br>Séries de Fourier: exemplos e aplicações<br>SEL0383</h2>
+					</div>
+					<div class="author">
+					<h3>Prof. Marcos Rogério Fernandes</h3>
+				</div>
+					<div class="advisor">
+					
+					<p style="text-align: center;font-size: 0.8em;">27 de agosto de 2024</p>
+				</div>
+
+				</section>
+
+						
+	
+
+
+
+	
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Teorema de Parseval</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					Dado uma função periódica $g(t)$ com período $T$, cuja série de Fourier é 
+					$
+					g(t)=\sum_{n=-\infty}^\infty c_ne^{jn\omega_0 t},
+					$
+					então 
+					<p class="lightup">
+					$$
+					\|g(t)\|^2_\text{efz}=\sum_{n=-\infty}^\infty |c_n|^2
+					$$
+				</p>
+		</center>
+			   </div>
+
+		</section>
+
+
+		
+		
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Espectro de Fourier: módulo</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+					
+				<img src="../images/espectro_fourier_mod_ex.png" width="800">
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Propriedades da Série de Fourier</h2>
+			</div>
+			<div class="slide-content">
+<center>
+				<ul>
+
+					<li>
+						Linearidade:
+						$$
+						\mathcal{S}_F\{\alpha g(t)+\beta h(t)\}=\alpha c_n+\beta d_n
+						$$
+					</li>
+					<li>
+						Deslocamento no tempo:
+						$$
+						\mathcal{S}_F\{g(t-t_0)\}=e^{-jn\omega_0 t_0}c_n
+						$$
+					</li>
+					<li>
+						Deslocamento na frequência:
+						$$
+						\mathcal{S}_F\{e^{jm\omega_0 t}g(t)\}=c_{n-m}
+						$$
+					</li>
+				</ul>
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Propriedades da Série de Fourier</h2>
+			</div>
+			<div class="slide-content">
+			
+				<center>
+				<ul>
+
+					
+					<li>Inversão no tempo:
+						$$
+						\mathcal{S}_F\{g(-t)\}=c_{-n}
+						$$
+					</li>
+					<li>
+						Convolução periódica:
+						$$
+						\mathcal{S}_F\{g(t)\ast h(t)\}=Tc_n d_n
+						$$
+					</li>
+					
+				</ul>
+			</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Propriedades da Série de Fourier</h2>
+			</div>
+			<div class="slide-content">
+			
+				<center>
+				<ul>
+
+				
+					<li>Multiplicação no tempo:
+$$
+\mathcal{S}_F\{g(t)h(t)\}=\sum_{l=-\infty}^\infty c_l d_{n-l}
+$$
+
+					</li>
+					<li>
+						Derivadas
+						$$
+						\mathcal{S}_F\Bigl\{\frac{dg}{dt}\Bigr\}=jn\omega_0 c_n
+						$$
+
+					</li>
+				</ul>
+			</center>
+			   </div>
+
+		</section>
+
+
+		
+		<section>
+
+			<div class="slide-title">
+				<h2>Objetivos
+				</h2>
+			</div>
+			<div class="slide-content">
+				<p>&nbsp;</p>
+		
+				<ul>
+					   <li>Exemplos de Serie de Fourier na forma Complexa;</li>
+					   <li>Aplicação na solução de EDO</li>
+					<li>Exemplo em 2D;</li>
+				</ul>
+			
+		</div>
+		
+	</section>
+
+
+
+			
+	<section>
+
+		<div class="slide-title">
+			<h2>Solução de EDO
+			</h2>
+		</div>
+		<div class="slide-content">
+			<center>
+			<img src="../images/mass_spring.png" width="700">
+			$$
+				M\frac{d^2y}{dt^2}+Ky=F(t)
+			$$
+		</center>
+
+		
+	</div>
+	
+</section>
+
+
+			
+<section>
+
+	<div class="slide-title">
+		<h2>Solução de EDO
+		</h2>
+	</div>
+	<div class="slide-content">
+		<center>
+		<img src="../images/mass_spring2.png" width="800">
+	</center>
+	
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Solução de EDO
+		</h2>
+	</div>
+	<div class="slide-content">
+		<center>
+		<img src="../images/mass_spring3.png" width="800">
+	</center>
+	
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Solução de EDO
+		</h2>
+	</div>
+	<div class="slide-content">
+		<center>
+			Força: 
+			$$
+			F(t)=d_0+\sum_{n=1}^\infty d_n\cos(n\omega_0 t)+m_n\sin(n\omega_0 t)
+			$$
+			Oscilação:
+		$$y(t)=a_0+\sum_{n=1}^\infty a_n \cos(n\omega_0 t)+b_n\sin(n\omega_0 t)$$
+	</center>
+	
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Solução de EDO: exemplo
+		</h2>
+	</div>
+	<div class="slide-content">
+		<center>
+			Força: 
+			$$
+			\frac{d^2y}{dt^2}+2y=F(t)
+			$$
+			em que 
+			$$
+			F(t)=\begin{cases} 
+			1, \text{ se } -1\le t < 0,\\
+			0, \text{ se } 0\le t \le 1.
+			\end{cases}
+			$$
+	</center>
+	
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Solução de EDO: exemplo
+		</h2>
+	</div>
+	<div class="slide-content">
+		<center>
+			Força: 
+			$$
+			\frac{d^2y}{dt^2}+2y=F(t)
+			$$
+			em que 
+			$$
+			F(t)=\frac{1}{2}+\sum_{n=1}^\infty \frac{2}{(2n+1)\pi}\sin((2n+1)\pi t)
+			$$
+	</center>
+	
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Solução de EDO: exemplo
+		</h2>
+	</div>
+	<div class="slide-content">
+		<center>
+			Oscilação: 		
+			$$
+			y(t)=a_0+\sum_{n=1}^\infty b_{2n+1}\sin((2n+1)\pi t)
+			$$
+	</center>
+
+	<center>
+		$$
+		\frac{dy}{dt}=\sum_{n=1}^\infty b_{2n+1}(2n+1)\pi\cos((2n+1)\pi t)
+		$$
+	</center>
+	
+</div>
+
+</section>
+
+<section>
+
+	<div class="slide-title">
+		<h2>Solução de EDO: exemplo
+		</h2>
+	</div>
+	<div class="slide-content">
+		<center>
+			Oscilação: 		
+			$$
+			y(t)=a_0+\sum_{n=1}^\infty b_{2n+1}\sin((2n+1)\pi t)
+			$$
+	</center>
+
+	<center>
+		$$
+		\frac{d^2y}{dt^2}=-\sum_{n=1}^\infty b_{2n+1}(2n+1)^2\pi^2\sin((2n+1)\pi t)
+		$$
+	</center>
+	
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Solução de EDO: exemplo
+		</h2>
+	</div>
+	<div class="slide-content">
+		<center>
+
+			$$
+			\frac{d^2y}{dt^2}+2y=F(t)
+			$$
+	</center>
+
+	<center>
+		$$
+		\Bigl(-\sum_{n=1}^\infty b_{2n+1}(2n+1)^2\pi^2\sin((2n+1)\pi t)\Bigr)\\+2\Bigl(a_0+\sum_{n=1}^\infty b_{2n+1}\sin((2n+1)\pi t)\Bigr)\\
+		=\frac{1}{2}+\sum_{n=1}^\infty \frac{2}{(2n+1)\pi}\sin((2n+1)\pi t)
+		$$
+	</center>
+	
+</div>
+
+</section>
+
+
+
+
+
+		
+
+
+		
+
+
+
+
+		<section>
+
+			<div class="slide-title">
+				
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+
+				<h1>Parte II<br>exemplo em 2D</h1>
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Série de Fourier em 1D
+				</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					Seja $g:[0,T]\to \mathbb{R}$, então 
+					<p class="lightup">
+			
+			$$
+					g(t)=a_{0}+ \sum_{n=1}^\infty a_{n}\cos(n\omega_0 t)\\+\sum_{n=1}^\infty b_{n}\sin(n\omega_0 t)
+			$$	
+		</p>
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Série de Fourier em 2D
+				</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					Seja $g:[0,T]\times [0,T]\to \mathbb{R}$, então 
+					<p class="lightup">
+			
+			$$
+					g(x,y)=a_{00}+\sum_{k=1}^\infty \sum_{n=1}^\infty a_{kn}\cos(k\omega_0 x)\cos(n\omega_0 y)\\+\sum_{k=1}^\infty \sum_{n=1}^\infty b_{kn}\sin(k\omega_0 x)\sin(n\omega_0 y)
+			$$	
+		</p>
+		</center>
+			   </div>
+
+		</section>
+
+
+		
+		<section>
+
+			<div class="slide-title">
+				<h2>Harmônicos em 1D
+				</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+				<img src="../images/cossenos_harmonicos.png" width="800">
+		</center>
+			   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Harmônicos em 2D
+				</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<P>&nbsp;</P>
+				<img src="../images/cossenos_harmonicos2D_view.png" width="1350">
+		</center>
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Harmônicos em 2D
+				</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<P>&nbsp;</P>
+				<img src="../images/cossenos_harmonicos2D.png" width="1350">
+		</center>
+			   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Harmônicos em 2D
+				</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+					<P>&nbsp;</P>
+				<img src="../images/cossenos_harmonicos2D_2.png" width="1350">
+		</center>
+			   </div>
+
+		</section>
+
+
+
+		
+		<section>
+
+			<div class="slide-title">
+				<h2>Produto Escalar em 2D
+				</h2>
+			</div>
+			<div class="slide-content">
+				
+				<center>
+				$$
+					\langle g, h\rangle = \int_0^T \int_0^T g(x,y)h(x,y)dxdy
+				$$
+		</center>
+
+		<center class="fragment">
+			$$
+				a_{00}=\frac{\langle g, 1\rangle}{\|1\|^2} = \frac{1}{T^2}\int_0^T \int_0^T g(x,y)dxdy	
+					$$
+	</center>
+
+	<center class="fragment">
+		$$
+			\phi_{kn}(x,y)=\cos(k\omega_0 x)\cos(n\omega_0 y)\\
+			\psi_{kn}(x,y)=\sin(k\omega_0 x)\sin(n\omega_0 y)
+				$$
+</center>
+
+		</section>
+
+
+		
+		<section>
+
+			<div class="slide-title">
+				<h2>Coeficientes em 2D
+				</h2>
+			</div>
+			<div class="slide-content">
+				
+						
+
+	<center>
+		$$
+			a_{kn}=\frac{\langle g, \phi_{kn}(x,y)\rangle}{\|\phi_{kn}(x,y)\|^2}\\
+			=A_{kn}\int_0^T\int_0^T g(x,y)\cos(k\omega_0 x)\cos(n\omega_0 y)dxdy
+				$$
+</center>
+			   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Coeficientes em 2D
+				</h2>
+			</div>
+			<div class="slide-content">
+				
+						
+
+				<center>
+					$$
+						a_{kn}=\frac{\langle g, \phi_{kn}(x,y)\rangle}{\|\phi_{kn}(x,y)\|^2}\\
+						=A_{kn}\int_0^T\int_0^T g(x,y)\cos(k\omega_0 x)\cos(n\omega_0 y)dxdy
+							$$
+			</center>
+
+			<center>
+				$$
+					b_{kn}=\frac{\langle g, \psi_{kn}(x,y)\rangle}{\|\psi_{kn}(x,y)\|^2}\\
+					=B_{kn}\int_0^T\int_0^T g(x,y)\sin(k\omega_0 x)\sin(n\omega_0 y)dxdy
+						$$
+		</center>
+			   </div>
+
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+				<section>
+
+					<div class="slide-title">
+						<h2>Próxima aula</h2>
+					</div>
+					<div class="slide-content">
+						<center>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+			
+					<h3>
+						Revisão para P1
+					</h3>
+					
+								
+				</center>
+					   </div>
+
+				</section>
+
+
+
+
+
+				<section>
+
+					<div class="slide-content">
+			<center>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+					<h2>
+						Até a próxima aula!
+					</h2>
+				</center>
+								
+					
+					   </div>
+
+				</section>
+
+
+
+
+		
+				
+			
+
+
+
+				<!------------------------>
+			</div>
+		</div>
+
+		
+
+		<script src="../../dist/reveal.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="../../plugin/highlight/highlight.js"></script>
+		<script src="../../plugin/math/math.js"></script>
+		<script src="../../init.js"></script>
+		
+	</body>
+</html>
+
