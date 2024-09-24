@@ -104,10 +104,11 @@
 					<p>&nbsp;</p>
 			
 					<ul>
+						<li>Aplicação das propriedades;</li>
 						<li>Sinal Triangular</li>
-						<li>Teorema de Parseval;</li>
-						
 						<li>Resolução de integrais;</li>
+						<li>Teorema de Parseval;</li>
+						<li>Propriedade da diferenciação em frequência;</li>
 						<li>Exemplos.</li>
 					
 					</ul>
@@ -120,7 +121,26 @@
 		
 
 		
+		<section>
+
+			<div class="slide-title">
+				<h2>Exemplo </h2>
+			</div>
+			<div class="slide-content">
+				<p>&nbsp;</p>
+			Seja 
+			$$
+				g(t)=\frac{2e^{j5t}}{(t+1)^2}
+			$$
+		<center class="lightup">
+		$$ G(\omega)=?$$
+		</center>
+
+
 		
+				   </div>
+
+		</section>
 
 	
 
@@ -132,7 +152,7 @@
 			<div class="slide-content">
 				<p>&nbsp;</p>
 			Considere o sinal $$\Lambda_T(t)=\begin{cases}
-			t-T, \text{ se } -T \le t \le 0\\
+			t+T, \text{ se } -T \le t \le 0\\
 			-t+T, \text{ se } 0 < t \le T
 			\end{cases}$$ 
 	 
@@ -173,12 +193,30 @@
 				<h2>Sinal Triangular </h2>
 			</div>
 			<div class="slide-content">
-				<p>&nbsp;</p>
+<p class="lightup">
 			 $$\Lambda_T(t)=G_{\frac{T}{2}}(t)\ast G_{\frac{T}{2}}(t)$$
-	 
-		<center class="lightup">
-		$$ G(\omega)=\mathcal{F}\{G_{\frac{T}{2}}(t)\ast G_{\frac{T}{2}}(t)\}=\frac{T^2}{4}\text{sinc}(\frac{\omega T}{4})$$
-		</center>
+			</p>
+	 <center>
+	<img src="../images/sinal_triangular.png" width="800">
+</center>
+
+		
+				   </div>
+
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Sinc^2</h2>
+			</div>
+			<div class="slide-content">
+				<p>&nbsp;</p>
+<p class="lightup">
+			 $$\mathcal{F}\{\text{sinc}^2(at)\}=?$$
+			</p>
 
 
 		
@@ -197,7 +235,30 @@
 		<center class="lightup">
 			
 		$$
-			I=\int_{-\infty}^\infty \text{sinc}(3t)\text{sinc}(5t)dt = ?
+			I=\int_{-\infty}^\infty \text{sinc}(t)dt = \pi
+		$$
+		
+		</center>
+
+
+
+		
+				   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Integral da função sinc </h2>
+			</div>
+			<div class="slide-content">	
+	 
+		<center class="lightup">
+			
+		$$
+			I=\int_{-\infty}^\infty \text{sinc}(5t)\text{sinc}^2(3t)dt = ?
 		$$
 		
 		</center>
@@ -217,7 +278,7 @@
 				<h2>Energia da função sinc </h2>
 			</div>
 			<div class="slide-content">	
-				Seja $$g(t)=a\text{sinc}(\frac{at}{2})$$ com $a>0$.
+				Seja $$g(t)=\text{sinc}(at)$$ com $a>0$.
 		<center class="lightup">
 			
 		$$
@@ -366,7 +427,7 @@
 							<p>&nbsp;</p>
 			
 							<h3>
-								Aplicações da Transformada de Fourier
+								Transformada de Fourier de sinais periódicos
 							</h3>
 								
 				</center>
