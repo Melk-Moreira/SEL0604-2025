@@ -1,0 +1,870 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>SEL0383 - Sinais e Sistemas</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../../plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="../style.css">
+
+		<script
+		type="text/javascript"
+		src="../../dist/vis-graph3d.min.js"
+	  ></script>
+	  <!-- <script type="text/javascript">
+		var data = null;
+		var graph = null;
+  
+	
+		// Called when the Visualization API is loaded.
+		function drawVisualization() {
+		  // Create and populate a data table.
+		  data = new vis.DataSet();
+		  // create some nice looking data with sin/cos
+		  var counter = 0;
+		  var steps = 1000; // number of datapoints will be steps*steps
+		  var axisMax = 20;
+		  var axisStep = axisMax / steps;
+		  for (var t = 0*axisStep; t < axisMax; t += axisStep) {
+			  data.add({ id: counter++, y: Math.cos(t), x: t, z:Math.sin(t), style: t });
+		  }
+  
+		  // specify options
+		  var options = {
+			width: "600px",
+			height: "600px",
+			style: "line",
+			dataColor: '#ff0000',
+			showPerspective: false,
+			showGrid: true,
+			showShadow: false,
+			keepAspectRatio: false,
+			verticalRatio: 1,
+			xLabel: "t",
+			zLabel: "Imaginário",
+			yLabel: "Real",
+			showAnimationControls 	: true
+		  };
+  
+		  // Instantiate our graph object.
+		  var container = document.getElementById("mygraph");
+		  graph = new vis.Graph3d(container, data, options);
+		  graph.setCameraPosition({horizontal: -1.57, vertical: 0, distance: 1.5});
+
+
+		  var container = document.getElementById("mygraph2");
+		  graph = new vis.Graph3d(container, data, options);
+		  graph.setCameraPosition({horizontal: -0.5, vertical: 0.5, distance: 1.5});
+		}
+	  </script> -->
+	</head>
+	<!-- <body onload="drawVisualization();"> -->
+		<body>
+		
+		<div class="reveal">
+			<div class="slides">
+
+
+				
+				<section data-hide-slide-number="true" data-transition="slide">
+					<div class="logo"><img src="../images/sel.png"/> </div>
+					<div class="logo2"><img src="../images/usp.png"/> </div>
+					<div class="title">
+					<h2>Aula 14: <br>Introdução aos Filtros Ideais<br>SEL0383</h2>
+					</div>
+					<div class="author">
+					<h3>Prof. Marcos Rogério Fernandes</h3>
+				</div>
+					<div class="advisor">
+					
+					<p style="text-align: center;font-size: 0.8em;">1 de outubro de 2024</p>
+				</div>
+
+				</section>
+
+
+
+				
+			
+			
+			<section>
+
+				<div class="slide-title">
+					<h2>Objetivos
+					</h2>
+				</div>
+				<div class="slide-content">
+					<p>&nbsp;</p>
+			
+					<ul>
+						<li>Definição de Filtros Ideais;</li>
+						<li>Filtro Passa Baixa</li>
+						<li>Filtro Passa Alta</li>
+						<li>Filtro Passa Faixa</li>
+						<li>Filtro Rejeita Faixa</li>
+						<li>Exemplos.</li>
+					
+					</ul>
+				
+			</div>
+			
+		</section>
+
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Filtros Ideais
+				</h2>
+			</div>
+			<div class="slide-content">
+			<center class="lightup">
+				Um filtro ideal é um <b>sistema</b> projetado especificamente para remover certas frequências de um sinal sem alterar as demais frequências.
+			</center>
+			<center>
+				<ul>
+				<li>Filtro Passa-Baixa (FPB);</li>
+				<li>Filtro Passa-Alta (FPA)</li>
+				<li>Filtros Passa-Faixa (FPF).</li>
+				<li>Filtros Rejeita-Faixa (FRF).</li>
+			</ul>
+			</center>
+		</div>
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Filtros Passa Baixa
+			</h2>
+		</div>
+		<div class="slide-content">
+		<center>
+		<img src="../images/filtro_passa_baixa.png" alt="">
+		<p class="lightup">
+		$$
+			H(\omega)=G_{2B}(\omega)
+		$$
+	</p>
+		</center>
+	</div>
+	
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/filtro_passa_baixa_positivo.png" width="800">
+	
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Alta
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/filtro_passa_alta.png" alt="">
+	<p class="lightup">
+	$$
+		H(\omega)=1-G_{2B}(\omega)
+	$$
+</p>
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Alta
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/filtro_passa_alta_positivo.png" width="800">
+	
+	</center>
+</div>
+
+</section>
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Faixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/filtro_passa_faixa.png" alt="">
+	<p class="lightup">
+	$$
+		H(\omega)=(1-G_{2B_1}(\omega))G_{2B_2}(\omega)
+	$$
+</p>
+	</center>
+</div>
+
+</section>
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Faixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/filtro_passa_faixa_positivo.png" width="800">
+	
+	</center>
+	<center class="lightup">
+	FPF=FPA+FPB		
+	</center>
+</div>
+
+</section>
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Rejeita Faixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/filtro_rejeita_faixa.png" alt="">
+	<p class="lightup">
+	$$
+		H(\omega)=1-(1-G_{2B_1}(\omega))G_{2B_2}(\omega)
+	$$
+</p>
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Rejeita Faixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/filtro_rejeita_faixa_positiva.png" width="750">
+	
+	</center>
+	<center class="lightup">
+	FPF=FPB+FPA		
+	</center>
+</div>
+
+</section>
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/filtro_passa_baixa.png" width="900">
+	<br>
+	Resposta Temporal
+	</center>
+	<center class="lightup">
+	$$h(t)=\mathcal{F}^{-1}\{G_{2B}(\omega)\}$$
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/sinc_noamp.png" width="550">
+	<br>
+	</center>
+	<center class="lightup">
+	$$h(t)=\frac{B}{\pi}\text{sinc}(Bt)$$
+	</center>
+</div>
+
+</section>
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/espectro_limitado_FPB.png" width="800">
+	<br>
+	Resultado:
+	</center>
+	<center class="lightup">
+	$Y(\omega)=G(\omega)H(\omega)$
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/espectro_limitado_FPB.png" width="800">
+	<br>
+	Resultado:
+	</center>
+	<center class="lightup">
+	$y(t)=g(t)\ast h(t)$
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/espectro_limitado_FPB.png" width="800">
+	<br>
+	Resultado:
+	</center>
+	<center class="lightup">
+	$y(t)=\int_{-\infty}^\infty g(\tau)h(t-\tau)d\tau$
+	</center>
+</div>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<p>&nbsp;</p>
+	<img src="../images/convolution_FPB_sinc.png" width="1300">
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<p>&nbsp;</p>
+	<img src="../images/convolution_FPB_sinc2.png" width="1300">
+	</center>
+</div>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<p>&nbsp;</p>
+	<img src="../images/convolution_FPB_sinc_t0.png" width="1300">
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<p>&nbsp;</p>
+	<img src="../images/convolution_FPB_sinc3.png" width="1300">
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<p>&nbsp;</p>
+	<img src="../images/convolution_FPB_sinc4.png" width="1300">
+	</center>
+</div>
+
+</section>
+
+
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa Ideal
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<p>Não-realizável</p>
+	<img src="../images/sinc_noamp.png" width="800">
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<p>&nbsp;</p>
+	<img src="../images/sinc_delayed.png" width="1100">
+	</center>
+</div>
+
+</section>
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<p>&nbsp;</p>
+	<img src="../images/convolution_FPB_sinc_delayed.png" width="1200">
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<p>&nbsp;</p>
+	<img src="../images/convolution_FPB_sinc_delayed2.png" width="1200">
+	</center>
+</div>
+
+</section>
+
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<p>&nbsp;</p>
+	<img src="../images/convolution_FPB_sinc_delayed3.png" width="1200">
+	</center>
+</div>
+
+</section>
+		
+	
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa 
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<p>&nbsp;</p>
+	<img src="../images/convolution_FPB_sinc_delayed4.png" width="1200">
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+
+	<img src="../images/sinc_delayed.png" width="800">
+	<p class="lightup">
+	$$
+		h(t-t_0) \Longleftrightarrow H(\omega)e^{-j\omega t_0}
+	$$
+</p>
+	</center>
+</div>
+
+</section>
+
+
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Baixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+
+	<img src="../images/filtro_passa_baixa_fase.png" width="1100">
+
+	</center>
+</div>
+
+</section>
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Alta
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/filtro_passa_alta.png" alt="">
+	<p class="lightup">
+	$$
+		h(t)=\mathcal{F}^{-1}\{1-G_{2B}(\omega)\}
+	$$
+</p>
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Alta
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/sinc_FPA.png" width="600">
+	<p class="lightup">
+	$
+		h(t)=\delta(t)-\frac{B}{\pi}\text{sinc}(B t)
+	$
+</p>
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Faixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/filtro_passa_faixa.png" width="1000">
+	<p class="lightup">
+	$$
+		h(t)=\mathcal{F}^{-1}\{(1-G_{2B_1}(\omega))G_{2B_2}(\omega)\}
+	$$
+</p>
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Passa Faixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/filtro_passa_faixa.png" width="1000">
+	<p class="lightup">
+	$$
+		h(t)=\mathcal{F}^{-1}\{1-G_{2B_1}(\omega)\}\ast \mathcal{F}^{-1}\{G_{2B_2}(\omega)\}
+	$$
+</p>
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Filtros Rejeita Faixa
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/filtro_rejeita_faixa.png" width="1000">
+	<p class="lightup">
+	$$
+		h(t)=\mathcal{F}^{-1}\{1-(1-G_{2B_1}(\omega))G_{2B_2}(\omega)\}
+	$$
+</p>
+	</center>
+</div>
+
+</section>
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Aplicação: Telecomunicações
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+	<img src="../images/AM_modulation_multistation.png" width="900">
+	</center>
+</div>
+
+</section>
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Aplicação: Telecomunicações
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<p>&nbsp;</p>
+	<img src="../images/espectro_fourier_AM_multistation_filter.png" width="1000">
+	</center>
+</div>
+
+</section>
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Aplicação: Telecomunicações
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<img src="../images/espectro_fourier_AM_demodulated_FPB.png" width="1000">
+	</center>
+</div>
+
+</section>
+
+
+
+<section>
+
+	<div class="slide-title">
+		<h2>Aplicação: Telecomunicações
+		</h2>
+	</div>
+	<div class="slide-content">
+	<center>
+		<img src="../images/AM_modulation_TX.png" width="1000">
+	</center>
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+		
+				<section>
+
+					<div class="slide-title">
+						<h2>Próxima aula</h2>
+					</div>
+					<div class="slide-content">
+						<center>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+			
+							<h3>
+								Filtros - parte 2
+							</h3>
+								
+				</center>
+					   </div>
+
+				</section>
+
+
+
+
+
+				<section>
+
+					<div class="slide-content">
+			<center>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+					<h2>
+						Até a próxima aula!
+					</h2>
+				</center>
+								
+					
+					   </div>
+
+				</section>
+
+
+
+
+		
+				
+			
+
+
+
+				<!------------------------>
+			</div>
+		</div>
+
+		
+
+		<script src="../../dist/reveal.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="../../plugin/highlight/highlight.js"></script>
+		<script src="../../plugin/math/math.js"></script>
+		<script src="../../init.js"></script>
+		
+	</body>
+</html>
+
