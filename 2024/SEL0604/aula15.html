@@ -1,0 +1,762 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>SEL0604 - Sinais e Sistemas</title>
+
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../../plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="../style.css">
+
+		<script
+		type="text/javascript"
+		src="../../dist/vis-graph3d.min.js"
+	  ></script>
+	  <!-- <script type="text/javascript">
+		var data = null;
+		var graph = null;
+  
+	
+		// Called when the Visualization API is loaded.
+		function drawVisualization() {
+		  // Create and populate a data table.
+		  data = new vis.DataSet();
+		  // create some nice looking data with sin/cos
+		  var counter = 0;
+		  var steps = 1000; // number of datapoints will be steps*steps
+		  var axisMax = 20;
+		  var axisStep = axisMax / steps;
+		  for (var t = 0*axisStep; t < axisMax; t += axisStep) {
+			  data.add({ id: counter++, y: Math.cos(t), x: t, z:Math.sin(t), style: t });
+		  }
+  
+		  // specify options
+		  var options = {
+			width: "600px",
+			height: "600px",
+			style: "line",
+			dataColor: '#ff0000',
+			showPerspective: false,
+			showGrid: true,
+			showShadow: false,
+			keepAspectRatio: false,
+			verticalRatio: 1,
+			xLabel: "t",
+			zLabel: "Imaginário",
+			yLabel: "Real",
+			showAnimationControls 	: true
+		  };
+  
+		  // Instantiate our graph object.
+		  var container = document.getElementById("mygraph");
+		  graph = new vis.Graph3d(container, data, options);
+		  graph.setCameraPosition({horizontal: -1.57, vertical: 0, distance: 1.5});
+
+
+		  var container = document.getElementById("mygraph2");
+		  graph = new vis.Graph3d(container, data, options);
+		  graph.setCameraPosition({horizontal: -0.5, vertical: 0.5, distance: 1.5});
+		}
+	  </script> -->
+	</head>
+	<!-- <body onload="drawVisualization();"> -->
+		<body>
+		
+		<div class="reveal">
+			<div class="slides">
+
+
+				
+				<section data-hide-slide-number="true" data-transition="slide">
+					<div class="logo"><img src="../images/sel.png"/> </div>
+					<div class="logo2"><img src="../images/usp.png"/> </div>
+					<div class="title">
+					<h2>Aula 15: <br>Introdução à análise de sistemas<br>SEL0604</h2>
+					</div>
+					<div class="author">
+					<h3>Prof. Marcos Rogério Fernandes</h3>
+				</div>
+					<div class="advisor">
+					
+					<p style="text-align: center;font-size: 0.8em;">21 de outubro de 2024</p>
+				</div>
+
+				</section>
+
+
+
+
+
+				<section>
+
+					<div class="slide-title">
+						<h2>Objetivos</h2>
+					</div>
+					<div class="slide-content">
+						<p>Os objetivos dessa aula é entender:
+								<ul>
+								<li>Definição de sistemas;</li> 
+								<li>Modelagem de sistemas;</li> 
+								<li>Propriedades de sistemas;</li>
+								<li>Sistemas Lineares Invariantes no Tempo</li>
+								<li>Exemplos</li>
+							</p>
+							</div>
+	
+				</section>
+
+
+
+				<section>
+
+					<div class="slide-title">
+						<h2>Sinais</h2>
+					</div>
+					<div class="slide-content">
+
+						<center>
+						
+							<p class="lightup"><b>Sinal</b> é tudo que carrega informação.</p>
+						<img src="../images/sinal.png" width="800">
+					
+					</center>
+	
+			</div>
+	
+		</section>
+
+
+				
+			<section>
+
+				<div class="slide-title">
+					<h2>Sistemas</h2>
+				</div>
+				<div class="slide-content">
+					 
+				<p class="lightup fragment current-visible">O que é um sistema?</p>
+				<center class="fragment current-visible" >
+					<p class="lightup"><b>Sistema</b> é tudo que modifica um sinal.</p>
+				<p>	<img src="../images/sistema2.png" width="800"></p>
+			</center> 
+
+			</center> 
+
+
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplos de sistemas</h2>
+		</div>
+		<div>
+
+			<center class="fragment current-visible">
+				<p>Telecomunicações</p>
+			<img src="../images/transmit_signal.png" width="950">
+
+			
+			</center>
+
+			<center class="fragment current-visible">
+				<p>Internet</p>
+				<img src="../images/internet.webp" width="750">
+
+				
+			</center>
+
+			<center class="fragment current-visible">
+				<p>Indústria: variáveis de processo</p>
+				<img src="../images/instrumentation.png" width="800">
+
+				
+			</center>
+
+			<center class="fragment current-visible">
+				<p>Corpo Humano</p>
+				<img src="../images/brain_waves.png" width="800">
+				<img src="../images/eeg.png" width="400" style="transform: translate(-1rem,-1rem);">
+
+				
+			</center>
+
+			<center class="fragment current-visible">
+				<p>Corpo Humano</p>
+				<img src="../images/heart.jpg" width="500">
+				<img src="../images/monitor-gif.webp" width="500" style="transform: translate(-1rem,-5rem);">
+
+				
+			</center>
+
+			<center class="fragment current-visible">
+				<p>Mercado Financeiro</p>
+				<img src="../images/stock_market.gif" width="800">					
+			</center>
+
+		</div>
+
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Objetivo principal </h2>
+		</div>
+		<div class="fragment current-visible"> 
+			<p>&nbsp;</p>
+			Aprender propriedades que os sinais obdecem quando passam por uma classe especial de sistemas:<br> 
+			<P class="lightup">
+			Sistemas Lineares e Invariantes no Tempo (SLIT)
+			
+		</P>
+		<img src="../images/sistema.png" width="650">
+		</div>
+
+		
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação matemática</h2>
+		</div>
+		
+		<div class=""> 
+			
+			<p>Função matemática $g:\mathbb{R}\to\mathbb{C}$</p>
+			<img src="../images/sinal.png" width="650">
+			<p>Os mesmos conceitos são validos para dimensões maiores<br> ($\mathbb{R}^2,\mathbb{R}^3$,...$\mathbb{R}^n$)</p>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação matemática</h2>
+		</div>
+		
+		<div class=""> 
+			
+			<p>Função matemática?</p>
+			<p>&nbsp;</p>
+			<img src="../images/sistema.png" width="650"><br>Sistema
+			
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação matemática</h2>
+		</div>
+		
+		<div class=""> 
+			<p>Operador que transforme um sinal em outro sinal!</p>
+			
+			<img src="../images/operador_espaco_funcoes.png" alt="">
+			<p class="lightup fragment">Equações Diferênciais Ordinárias (EDO)</p>
+			
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação matemática</h2>
+		</div>
+		
+		<div class=""> 
+			
+			<p>EDO</p>
+			
+			<img src="../images/sistema.png" width="650"><br>Sistema
+			<p class="lightup">
+			$$
+			y(t)=G\{x(t)\}
+			$$
+		</p>
+			
+		</div>
+
+		
+	</section>
+
+
+
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedades dos sistemas</h2>
+		</div>
+		
+		<div class=""> 
+			
+			<ul>
+				<li>Linearidade</li>
+				<li>Invariânica temporal;</li>
+				<li>Memória;</li>
+				<li>Causalidade;</li>
+				<li>Estabilidade;</li>
+			</ul>
+			
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Linearidade</h2>
+		</div>
+		
+		<div class="lightup"> 
+			<p>
+			Se 
+			$$
+			y_1(t)=G\{x_1(t)\},\quad y_2(t)=G\{x_2(t)\}
+			$$
+			então,			
+		$$
+			G\{\alpha x_1(t)+\beta x_2(t)\}=\alpha y_1(t) + \beta y_2(t)
+		$$
+	</p>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Invariância Temporal</h2>
+		</div>
+		
+		<div class="lightup"> 
+			<p>
+			Se 
+			$$
+			y(t)=G\{x(t)\},
+			$$
+			então,			
+		$$
+		G\{x(t-t_0)\}=y(t-t_0)
+		$$
+	</p>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Memória</h2>
+		</div>
+		
+		<div class="lightup"> 
+			<p>
+		
+			$$
+			y(t)=G\{x(t)\},
+			$$
+				
+	</p>
+		</div>
+		Exemplo:
+				Resistor vs Capacitor
+			$$
+				v(t)=Ri(t),\quad v_c(t)=\frac{1}{C}\int_{-\infty}^t i_c(\tau)d\tau
+			$$
+
+
+		
+	</section>
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Causalidade</h2>
+		</div>
+		
+		<div class="lightup"> 
+			<p>
+		
+			$$
+			y(t_0)=G\{x(t)\}, t\le t_0
+			$$
+				
+	</p>
+		</div>
+		Exemplo não-causal:
+			$$
+				y(t)=\int_{-\infty}^{t+1} x(\tau)d\tau
+			$$
+
+
+		
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Estabilidade</h2>
+		</div>
+		
+		<div class="lightup"> 
+			<p>
+		BIBO-Estabilidade (Bounded-Input-Bounded-Output):
+		<br>
+		Se
+			$$
+			|x(t)|\le \alpha 
+			$$
+			então 
+			$$
+			|y(t)|\le \beta 
+			$$
+				
+	</p>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Estabilidade</h2>
+		</div>
+		
+		<div class="lightup"> 
+			<p>
+	    Estabilidade Assintótica:
+		<br>
+		$$
+			\exists \alpha < \infty : \lim_{t\to\infty} |y(t)-\alpha|\to 0
+		$$
+				
+	</p>
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Classificações de sistemas</h2>
+		</div>
+		
+		<div class=""> 
+			<p>&nbsp;</p>
+		<ul>
+			<li>Tempo contínuo ou tempo discreto;</li>
+			<li>
+			Linear ou Não-linear
+		</li>
+	<li>Escalar ou Multivariável;</li>
+	<li>Determinísticos ou Estocástico;</li>
+	<li>Caótico ou Não-Caótico;</li>
+
+	</ul>
+			
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Tempo Contínuo vs Discreto</h2>
+		</div>
+		
+		<div class=""> 
+			$$
+			y(t), \quad t\in\mathbb{R}
+			$$	
+		<img src="../images/sinal_continuo.png" alt="">		
+		
+		</div>
+
+		
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Tempo Contínuo vs Discreto</h2>
+		</div>
+		
+		<div class=""> 
+			$$
+			y[k], \quad k\in\mathbb{Z}
+			$$
+		<img src="../images/sinal_discreto.png" alt="">		
+
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Tempo Contínuo vs Discreto</h2>
+		</div>
+		
+		<div class=""> 
+			<p>Amostragem (Conversão Analógico-para-Digital)</p>
+		<img src="../images/sinal_amostrado.png" alt="">			
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Linear vs Não-linear</h2>
+		</div>
+		
+		<div class=""> 
+		<img src="../images/pendulo_simples.gif" width="950">
+		<p class="lightup">
+		$
+		l\ddot{\theta}=-g\sin(\theta)-b\dot{\theta}+u
+		$
+	</p>
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Linear vs Não-linear</h2>
+		</div>
+		
+		<div class=""> 
+			<p>&nbsp;</p>
+		<img src="../images/mass_spring.png" width="650">
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Linear vs Não-linear</h2>
+		</div>
+		
+		<div class=""> 
+			<p>&nbsp;</p>
+		   <p>&nbsp;</p>
+		<ul>
+			<li>Satisfaz propriedade da <b>superposição</b> $\to $ linear</li>
+			<li>Não-satisfaz propriedade da <b>superposição</b> $\to$ não-linear</li>
+		</ul>
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Escalar vs Multivariável</h2>
+		</div>
+		
+		<div class=""> 
+			<p>&nbsp;</p>
+		SISO (Single-Input-Single-Output):
+			
+			<br>
+			<img src="../images/sistema.png" alt="">
+			<br>
+			Sistema Escalar (Unidimensional)
+			<p>&nbsp;</p>
+			$$
+			x(t)\in\mathbb{R},\quad y(t) \in \mathbb{R}
+			$$
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Escalar vs Multivariável</h2>
+		</div>
+		
+		<div class=""> 
+		
+		MIMO (Multiple-Input-Multiple-Output):
+			
+			<br>
+			<img src="../images/MIMO.png" width="500">
+			<br>
+			Sistema Multivariável (Multidimensional)
+
+			$$
+			u(t)\in\mathbb{R^m},\quad y(t) \in \mathbb{R^p}
+			$$
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Determinístico vs Estocástico</h2>
+		</div>
+		
+		<div class=""> 
+		
+		MIMO (Multiple-Input-Multiple-Output):
+			
+			<br>
+			<img src="../images/MIMO.png" width="500">
+			<br>
+			Sistema Multivariável (Multidimensional)
+
+			$$
+			u(t)\in\mathbb{R^m},\quad y(t) \in \mathbb{R^p}
+			$$
+		</div>
+
+		
+	</section>
+
+
+
+
+
+
+
+
+
+		
+				<section>
+
+					<div class="slide-title">
+						<h2>Próxima aula</h2>
+					</div>
+					<div class="slide-content">
+						<center>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+			
+							<h3>
+								Modelagem de sistemas LIT.
+							</h3>
+								
+				</center>
+					   </div>
+
+				</section>
+
+
+
+
+
+				<section>
+
+					<div class="slide-content">
+			<center>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+					<h2>
+						Até a próxima aula!
+					</h2>
+				</center>
+								
+					
+					   </div>
+
+				</section>
+
+
+
+
+		
+				
+			
+
+
+
+				<!------------------------>
+			</div>
+		</div>
+
+		
+
+		<script src="../../dist/reveal.js"></script>
+		<script src="../../plugin/notes/notes.js"></script>
+		<script src="../../plugin/markdown/markdown.js"></script>
+		<script src="../../plugin/highlight/highlight.js"></script>
+		<script src="../../plugin/math/math.js"></script>
+		<script src="../../init.js"></script>
+		
+	</body>
+</html>
+
