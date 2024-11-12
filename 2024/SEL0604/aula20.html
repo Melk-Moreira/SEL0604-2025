@@ -77,14 +77,14 @@
 					<div class="logo"><img src="../images/sel.png"/> </div>
 					<div class="logo2"><img src="../images/usp.png"/> </div>
 					<div class="title">
-					<h2>Aula 19: <br>Representação de SLIT e Estabilidade<br>SEL0604</h2>
+					<h2>Aula 20: <br>Análise de Frequência de SLIT<br>SEL0604</h2>
 					</div>
 					<div class="author">
 					<h3>Prof. Marcos Rogério Fernandes</h3>
 				</div>
 					<div class="advisor">
 					
-					<p style="text-align: center;font-size: 0.8em;">5 de novembro de 2024</p>
+					<p style="text-align: center;font-size: 0.8em;">12 de novembro de 2024</p>
 				</div>
 
 				</section>
@@ -92,28 +92,6 @@
 
 
 
-
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Objetivo principal </h2>
-		</div>
-		<div class=""> 
-
-			Aprender propriedades que os sinais obedecem quando passam por uma classe especial de sistemas:<br> 
-			<P class="lightup">
-			Sistemas Lineares e Invariantes no Tempo (SLIT), causais, determinístico e não-caóticos.
-			
-		</P>
-		<img src="../images/sistema.png" width="650">
-		</div>
-
-		
-
-	</section>
 
 
 
@@ -125,9 +103,8 @@
 		<div class="slide-content">
 			<p>Os objetivos dessa aula é entender:
 					<ul>
-					<li>Respostas temporais;</li>
-					<li>Teorema do Valor Final/Inicial</li>
-					<li>Estabilidade</li>
+					<li>Auto-função e Autovalor de SLIT;</li>
+					<li>Respostas em frequência de SLIT;</li>
 					<li>Exemplos</li>
 				</p>
 				</div>
@@ -135,23 +112,483 @@
 	</section>
 
 
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo:</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+
+			<img src="../images/mass_spring.png" width="450">
+			<p class="lightup">
+			
+	$
+			M\ddot{y}=-Ky-\gamma\dot{y}+F(t)
+	$
+</p>
+	<ul>
+		<li>Qual a função de transferência?</li>
+		<li>Qual a resposta ao impulso?</li>
+	</ul>
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
 	
 	
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Entrada $e^{st}$ em SLIT</h2>
 		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../images/sistema.png" width="500">
+			<p class="lightup">
+			$$
+			x(t)=e^{st}
+			$$
+		</p>
+		$$
+y(t)=?
+		$$
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../images/sistema.png" width="500">
+			<p class="lightup">
+			$$
+			y(t)=g(t)\ast x(t)
+			$$
+		</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../images/sistema.png" width="500">
+			<p class="lightup">
+			$$
+			y(t)=g(t)\ast e^{st}=\int_{-\infty}^\infty g(\tau)e^{s(t-\tau)}d\tau
+			$$
+		</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../images/sistema.png" width="500">
+			<p class="lightup">
+			$$
+			y(t)=g(t)\ast e^{st}=\Bigl(\int_{-\infty}^\infty g(\tau)e^{-s\tau}d\tau\Bigr) e^{st}
+			$$
+		</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../images/sistema.png" width="500">
+			<p class="lightup">
+			$$
+			y(t)=g(t)\ast e^{st}=G(s)e^{st}
+			$$
+		</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../images/sistema_autofuncao.png" width="700">
+
+			<p class="lightup">$e^{st}$ é auto-função de SLIT! E $G(s)$ é o respectivo autovalor.</p>
+			Análogo ao $\mathbb{R}^n$:
+			$
+			A\vec{v}=\lambda \vec{v}
+			$
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../images/sistema.png" width="500">
+			<p class="lightup">
+			$$
+			x(t)=e^{st}\Bigl|_{\sigma=0}=e^{j\omega t}
+			$$
+		</p>
+		$$
+y(t)=?
+		$$
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../images/sistema.png" width="600">
+$$
+x(t)=e^{st}\Bigr|_{\sigma=0}
+$$
+			<p class="lightup">
+				$$
+				y(t)=g(t)\ast e^{j\omega t}=G(j\omega )e^{j\omega t}
+				$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Transformada de Fourier</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			
+			<p class="lightup">
+				$$
+				\mathcal{F}\{g(t)\}=G(s)\Bigr|_{\sigma=0} = G(j\omega)=G(\omega)
+				$$
+			</p>
+			<img src="../images/plano_s_fourier.png" width="400">
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta ao impulso de SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../images/sistema_impulso.png" width="600">
+			<p class="lightup">
+				É possível obter a resposta ao impulso de um SLIT na prática (experimentalmente)?
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../images/sistema_cos.png" width="700">
+			<p class="lightup">
+				Qual a saída do sistema para uma entrada cossenoidal?
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../images/sistema_cos.png" width="700">
+			<p class="lightup">
+				$$\cos(\omega_0 t)=\frac{e^{j\omega_0 t}+e^{-j\omega_0 t}}{2}$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+		
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../images/sistema_cos.png" width="700">
+			<p class="lightup">
+				$$
+				y(t)=g(t)\ast \Bigl( \frac{e^{j\omega_0 t}+e^{-j\omega_0 t}}{2}\Bigr)
+				$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../images/sistema_cos.png" width="700">
+			<p class="lightup">
+				$$
+				y(t)=G(j\omega_0)\frac{1}{2}e^{j\omega_0 t}+G(-j\omega_0) \frac{1}{2}e^{-j\omega_0 t}
+				$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+	
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../images/sistema_cos.png" width="700">
+			<p class="lightup">
+				$$
+				y(t)=G(j\omega_0)\frac{1}{2}e^{j\omega_0 t}+G^*(j\omega_0) \frac{1}{2}e^{-j\omega_0 t}
+				$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			Lembre que
+			$$
+			G(j\omega_0)=|G(j\omega_0)|e^{j\theta(\omega_0)}
+			$$
+			Portanto,
+			<p class="lightup">
+				$$
+				y(t)=|G(j\omega_0)|\frac{1}{2}(e^{j(\omega_0 t+\theta(\omega_0))}+e^{-j(\omega_0t+\theta(\omega_0))})
+				$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			Lembre que
+			$$
+			G(j\omega_0)=|G(j\omega_0)|e^{j\theta(\omega_0)}
+			$$
+			Portanto,
+			<p class="lightup">
+				$$
+				y(t)=|G(j\omega_0)|\cos(\omega_0 t +\theta(\omega_0))
+				$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
 		<p>&nbsp;</p>
-		<div class=""> 
-		
-			<p class="lightup">
-				Equação Algébrica no plano-s:
-		$$
-			Y(s)=\underbrace{\frac{s^m+\cdots+b_{m-1}s+ b_m}{s^n+\cdots+a_{n-1}s+a_n}}_{G(s)}X(s)
-		$$
-		<center>Representação na frequência complexa $s$!</center>
-	</p>
+			<img src="../images/resposta_frequencia_cosseno_entrada.png" width="950">
+
+			
+		</center>
+
+
 		</div>
 
 		
@@ -161,40 +598,119 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Resposta do SLIT</h2>
 		</div>
 		
 		<div class=""> 
+		
+		<center>
 		<p>&nbsp;</p>
-			<p class="lightup">
-				Equação Algébrica no plano-s:
-		$$
-			Y(s)=G(s)X(s)
-		$$
-		<center>Representação na frequência complexa $s$!</center>
-	</p>
+			<img src="../images/resposta_frequencia_cosseno2.png" width="950">
+
+			
+		</center>
+
+
 		</div>
 
 		
 	</section>
 
 
+
 	
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Resposta do SLIT</h2>
 		</div>
 		
 		<div class=""> 
+		
+		<center>
 		<p>&nbsp;</p>
+			<img src="../images/sistema_cos2.png" width="950">
+
 			<p class="lightup">
-				Função de Transferência (FT):
+Usando um gerador de funções $\cos(\omega_0 t)$ para diferentes valores de $\omega_0$ é possível obter $|G(\omega_0)|$ e $\theta(\omega_0)$!
+			</p>
+			$$
+			G(j\omega)=|G(j\omega)|e^{j\theta(\omega_0)}
+			$$
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+		
+			<img src="../images/resposta_frequencia.png" width="550">
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+		
+			<img src="../images/resposta_frequencia3.png" width="550">
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+		<img src="../images/sistema.png" width="500">
+		<p>
+		Resposta em Frequência
 		$$
-			G(s)=\frac{Y(s)}{X(s)}
+			G(j\omega)=|G(j\omega)|e^{j\theta(\omega)}
 		$$
-		<center>Representação na frequência complexa $s$!</center>
 	</p>
+		<p class="lightup">
+			A resposta em frequência é suficiente para caracterizar um SLIT!
+		</p>
+		</center>
+
+
 		</div>
 
 		
@@ -205,495 +721,94 @@
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Resposta em frequência do SLIT</h2>
 		</div>
 		
 		<div class=""> 
+		
 		<center>
 			<p>&nbsp;</p>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
+		<img src="../images/sistema_impulso.png" width="500">
+		<p class="lightup">
+			Resposta ao impulso:
 			$$
-			G(s)=\frac{s^m+\cdots+b_{m-1}s+ b_m}{s^n+\cdots+a_{n-1}s+a_n}
+			g(t)=\mathcal{F}^{-1}\{G(j\omega)\}
 			$$
 		</p>
 		</center>
+
+
 		</div>
 
 		
 	</section>
 
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<p>&nbsp;</p>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-				Teorema de D'Alembert (Teorema Fundamental da Álgebra)
-			$$
-			G(s)=\frac{(s-z_1)(s-z_2)\cdots(s-z_m)}{(s-p_1)(s-p_2)\cdots(s-p_n)}
-			$$
-		</p>
-		</center>
-		</div>
-
-		
-	</section>
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<p>&nbsp;</p>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-				Teorema de D'Alembert (Teorema Fundamental da Álgebra)
-			$$
-			G(s)=\frac{(s-z_1)(s-z_2)\cdots(s-z_m)\to\text{zeros}}{(s-p_1)(s-p_2)\cdots(s-p_n)\to\text{pólos}}
-			$$
-		</p>
-		</center>
-		</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-				<img src="../images/laplace_transf_polos.gif" width="750">
-		
-		</center>
-		</div>
-
-		
-	</section>
-
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<p>&nbsp;</p>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-				Expansão em frações parciais (pólos distintos):
-			$$
-			G(s)=\frac{a_1}{s-p_1}+\frac{a_2}{s-p_2}+\cdots+\frac{a_n}{s-p_n}
-			$$
-		</p>
-		</center>
-		</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<p>&nbsp;</p>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-				Resposta temporal (pólos distintos):
-			$$
-			g(t)=(a_1e^{p_1 t}+a_2e^{p_2t}+\cdots+a_ne^{p_n t})u(t)
-			$$
-		</p>
-		</center>
-		</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<p>&nbsp;</p>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-				Pólos com multiplicidade:
-			$$
-			G(s)=\frac{(s-z_1)(s-z_2)\cdots(s-z_m)\to\text{zeros}}{(s-p_1)^d(s-p_2)\cdots(s-p_{n-d+1})\to\text{pólos}}
-			$$
-		</p>
-		</center>
-		</div>
-
-	</section>
 
 
 	
 
 
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-				Expansão em frações parciais (pólos com multiplicidade):
-			$$
-			G(s)=\frac{a_{11}}{(s-p_1)}+\frac{a_{12}}{(s-p_1)^2}+\cdots+\frac{a_{1d}}{(s-p_1)^d}\\+\frac{a_2}{s-p_2}+\cdots+\frac{a_{n-p+1}}{s-p_{n-d+1}}
-			$$
-		</p>
-		</center>
-		</div>
-
-	</section>
+	
 
 
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-				Expansão em frações parciais (pólos com multiplicidade):
-			$$
-			g(t)=(a_{11}e^{p_1 t}+a_{12}te^{p_1t}+\cdots+a_{1d}t^{d-1}e^{p_1 t}\\+a_2e^{p_2t}+\cdots+a_ne^{p_n t})u(t)
-			$$
-		</p>
-		</center>
-		</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-				Expansão em frações parciais (pólos conjugados):
-			$$
-			G(s)=\frac{(s-z_1)(s-z_2)\cdots(s-z_m)\to\text{zeros}}{(s-(a+jb))(s-(a-jb))\cdots(s-p_{n-1})\to\text{pólos}}
-			$$
-		</p>
-		</center>
-		</div>
-
-	</section>
-
-
+	
 	
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Resposta em frequência do SLIT</h2>
 		</div>
 		
 		<div class=""> 
+		
 		<center>
 			<p>&nbsp;</p>
-			<img src="../images/sistema_plano_s.png" width="600">
+			<img src="../images/sistema_cos2.png" width="950">
 			<p class="lightup">
-				Expansão em frações parciais (pólos conjugados):
-			$$
-			G(s)=\frac{a_1}{s-(a+jb)}+\frac{a_2}{s-(a-jb)}+\cdots+\frac{a_{n-1}}{s-p_{n-1}}
-			$$
-		</p>
+SLIT conservam a frequência! Uma frequência $\omega_0$ que não estiver na entrada não pode aparecer na saída.
+			</p>
+	$$
+			Y(j\omega)=G(j\omega)X(j\omega)
+	$$
 		</center>
+
+
 		</div>
 
+		
 	</section>
+
 
 
 	<section>
 
 		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
+			<h2>Exemplo:</h2>
 		</div>
 		
 		<div class=""> 
+		
 		<center>
 			<p>&nbsp;</p>
-			<img src="../images/sistema_plano_s.png" width="600">
+			<img src="../images/sistema.png" width="500">
 			<p class="lightup">
-				Resposta temporal (pólos conjugados):
-			$$
-			g(t)=(a_1e^{(a+jb) t}+a_2e^{(a-jb)t}+\cdots+a_{n-1}e^{p_{n-1} t})u(t)
-			$$
-		</p>
+			
+	$$
+			y(t)=x(t)^2
+	$$
+</p>
+	Esse sistema conserva a frequência?
 		</center>
+
+
 		</div>
 
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
 		
-		<div class=""> 
-		<center>
-			<p>&nbsp;</p>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-				Expansão em frações parciais (pólos conjugados):
-			$$
-			G(s)=\frac{a_1}{(s-a)+b^2}+\cdots+\frac{a_{n-1}}{s-p_{n-1}}
-			$$
-		</p>
-		</center>
-		</div>
-
 	</section>
 
 
-	
-	<section>
 
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
 		
-		<div class=""> 
-		<center>
-			<p>&nbsp;</p>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-				Resposta temporal (pólos conjugados):
-			$$
-			g(t)=(\frac{a_1}{b}e^{at}\sin(b t)+\cdots+a_{n-1}e^{p_{n-1} t})u(t)
-			$$
-		</p>
-		</center>
-		</div>
-
-	</section>
-
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<p class="lightup">
-			SLIT:
-			$$
-			\frac{d^2y}{dt^2}+5\frac{dy}{dt}+6y=\frac{dx}{dt}+x
-			$$
-		</p>
-		<ul>
-			<li>Função de transferência?</li>
-			<li>Resposta ao impulso?</li>
-		</ul>
-		</center>
-		</div>
-
-	</section>
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<p class="lightup">
-			SLIT:
-			$$
-			G(s)=\frac{(s+1)}{(s+2)^2(s+3)}
-			$$
-		</p>
-		<ul>
-			<li>Resposta ao impulso?</li>
-		</ul>
-		</center>
-		</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<p class="lightup">
-			SLIT:
-			$$
-			G(s)=\frac{(s+1)}{(s+2+j)(s+2-j)(s+3)}
-			$$
-		</p>
-		<ul>
-			<li>Resposta ao impulso?</li>
-		</ul>
-		</center>
-		</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Estabilidade de SLIT</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<img src="../images/estabilidade_continuo.png" width="350">
-			<p class="lightup2">
-			$$
-			\mathcal{Real}\{pólos\}< 0
-			$$
-		</p>
-		</center>
-		</div>
-
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Representação de SLIT no plano-s</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-				Resposta temporal (assintoticamente estável):
-			$$
-			g(t)=(A+Be^{-\lambda t}+Ce^{-\alpha t}\sin(\omega_n t))u(t)
-			$$
-		</p>
-		</center>
-		</div>
-
-	</section>
-
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Teorema do Valor Final</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-			$$
-			\lim_{t\to\infty}g(t)=\lim_{s\to 0} s G(s)
-			$$
-		</p>
-		obs: $\mathcal{Real}\{pólos(sG(s))\} < 0$.
-		</center>
-		</div>
-
-	</section>
-
-
-	
-	<section>
-
-		<div class="slide-title">
-			<h2>Teorema do Valor Inicial</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<img src="../images/sistema_plano_s.png" width="600">
-			<p class="lightup">
-			$$
-			\lim_{t\to 0}g(t)=\lim_{s\to \infty} s G(s)
-			$$
-		</p>
-		obs: $G(s)$ estritamente própria.
-		</center>
-		</div>
-
-	</section>
-
-
-	<section>
-
-		<div class="slide-title">
-			<h2>Exemplo</h2>
-		</div>
-		
-		<div class=""> 
-		<center>
-			<p class="lightup">
-			SLIT:
-			$$
-			G(s)=\frac{10(2s+3)}{s(s^2+2s+5)}
-			$$
-		</p>
-		<ul>
-			<li>$g(0)$?</li>
-			<li>$g(\infty)$?</li>
-		</ul>
-		</center>
-		</div>
-
-	</section>
 
 
 
@@ -716,7 +831,7 @@
 							<p>&nbsp;</p>
 			
 							<h3>
-								Análise em frequência de SLIT
+								Diagrama de Bode para SLIT
 							</h3>
 								
 				</center>
