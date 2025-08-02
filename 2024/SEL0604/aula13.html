@@ -6,17 +6,17 @@
 
 		<title>SEL0604 - Sinais e Sistemas</title>
 
-		<link rel="stylesheet" href="../../dist/reset.css">
-		<link rel="stylesheet" href="../../dist/reveal.css">
-		<link rel="stylesheet" href="../../dist/theme/white.css" id="theme">
+		<link rel="stylesheet" href="../../reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../../reveal.js/dist/theme/white.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="../../plugin/highlight/monokai.css" id="highlight-theme">
-		<link rel="stylesheet" href="../style.css">
+		<link rel="stylesheet" href="../../reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="../../style.css">
 
 		<script
 		type="text/javascript"
-		src="../../dist/vis-graph3d.min.js"
+		src="../../reveal.js/dist/vis-graph3d.min.js"
 	  ></script>
 	  <!-- <script type="text/javascript">
 		var data = null;
@@ -74,8 +74,8 @@
 
 				
 				<section data-hide-slide-number="true" data-transition="slide">
-					<div class="logo"><img src="../images/sel.png"/> </div>
-					<div class="logo2"><img src="../images/usp.png"/> </div>
+					<div class="logo"><img src="../../images/sel.png"/> </div>
+					<div class="logo2"><img src="../../images/usp.png"/> </div>
 					<div class="title">
 					<h2>Aula 13: <br>Filtros Analógicos - parte 1<br>SEL0604</h2>
 					</div>
@@ -131,7 +131,7 @@
 	</div>
 	<div class="slide-content">
 	<center>
-	<img src="../images/filtro_passa_baixa_positivo.png" width="800">
+	<img src="../../images/filtro_passa_baixa_positivo.png" width="800">
 	
 	</center>
 </div>
@@ -148,7 +148,7 @@
 	</div>
 	<div class="slide-content">
 	<center>
-	<img src="../images/filtro_passa_alta_positivo.png" width="800">
+	<img src="../../images/filtro_passa_alta_positivo.png" width="800">
 	
 	</center>
 </div>
@@ -166,7 +166,7 @@
 	</div>
 	<div class="slide-content">
 	<center>
-	<img src="../images/filtro_passa_faixa_positivo.png" width="800">
+	<img src="../../images/filtro_passa_faixa_positivo.png" width="800">
 	
 	</center>
 	<center class="lightup">
@@ -187,7 +187,7 @@
 	</div>
 	<div class="slide-content">
 	<center>
-	<img src="../images/filtro_rejeita_faixa_positiva.png" width="750">
+	<img src="../../images/filtro_rejeita_faixa_positiva.png" width="750">
 	
 	</center>
 	<center class="lightup">
@@ -230,7 +230,7 @@
 	</div>
 	<div class="slide-content">
 		<center>
-		<img src="../images/divisor_tensao.png" width="700">
+		<img src="../../images/divisor_tensao.png" width="700">
 		<p class="lightup">
 		$
 			V_o(\omega)=V_i(\omega)\frac{Z_2}{Z_1+Z_2}
@@ -253,7 +253,7 @@
 	<div class="slide-content">
 		<center>
 			<p>&nbsp;</p>
-		<img src="../images/resistor.png" width="500">
+		<img src="../../images/resistor.png" width="500">
 		<p class="lightup">
 		$$
 			Z_R=R
@@ -274,7 +274,7 @@
 	</div>
 	<div class="slide-content">
 		<center>
-					<img src="../images/capacitor.png" width="300">
+					<img src="../../images/capacitor.png" width="300">
 		<p class="lightup">
 		$$
 			Z_C=\frac{1}{j\omega C}
@@ -296,7 +296,7 @@
 	<div class="slide-content">
 		<p>&nbsp;</p>
 		<center>
-					<img src="../images/indutor.png" width="500">
+					<img src="../../images/indutor.png" width="500">
 		<p class="lightup">
 		$$
 			Z_L=j\omega L
@@ -321,9 +321,9 @@
 		<center>
 			<table>
 				<tr><td align="center">Resistor</td><td align="center">Capacitor</td><td align="center">Indutor</td></tr>
-				<tr><td><img src="../images/resistor.png" width="400"></td>
-				<td><img src="../images/capacitor.png" width="250"></td>
-				<td><img src="../images/indutor.png" width="400"></td></tr>
+				<tr><td><img src="../../images/resistor.png" width="400"></td>
+				<td><img src="../../images/capacitor.png" width="250"></td>
+				<td><img src="../../images/indutor.png" width="400"></td></tr>
 				<tr><td align="center">$Z_R=R$</td><td align="center">$Z_C=\frac{1}{j\omega C}$</td><td align="center">$Z_L=j\omega L$</td></tr>
 			</table>				
 					
@@ -344,7 +344,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_RC.png" width="600">
+					<img src="../../images/filtro_RC.png" width="600">
 		<p class="lightup">
 		$
 			H(\omega)=\frac{\frac{1}{RC}}{j\omega+\frac{1}{RC}}
@@ -366,7 +366,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_RC.png" width="600">
+					<img src="../../images/filtro_RC.png" width="600">
 		<p class="lightup">
 		$
 			|H(\omega)|=\frac{\frac{1}{RC}}{\sqrt{\omega^2+\frac{1}{(RC)^2}}},\quad \theta(\omega)=-\arctan(\frac{\omega}{RC})
@@ -389,7 +389,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_rc_espectro.png" width="800">
+					<img src="../../images/filtro_rc_espectro.png" width="800">
 		
 	</center>
 	
@@ -431,7 +431,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_rc_espectro_db.png" width="800">
+					<img src="../../images/filtro_rc_espectro_db.png" width="800">
 		
 	</center>
 	
@@ -560,7 +560,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_RC_meia_potencia.png" width="800">
+					<img src="../../images/filtro_RC_meia_potencia.png" width="800">
 		
 	</center>
 	
@@ -578,7 +578,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_RC_meia_potencia2.png" width="800">
+					<img src="../../images/filtro_RC_meia_potencia2.png" width="800">
 		
 	</center>
 	
@@ -622,7 +622,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_RC.png" width="600">
+					<img src="../../images/filtro_RC.png" width="600">
 					<center class="lightup">
 						$$
 						B=\frac{1}{RC}
@@ -649,7 +649,7 @@
 				$$
 			g(t)=\cos(2t)+\cos(25t)
 				$$
-				<img src="../images/sinal_para_filtrar.png" alt="">
+				<img src="../../images/sinal_para_filtrar.png" alt="">
 	</center>
 	
 </div>
@@ -672,7 +672,7 @@
 			B\approx 3 rad/s
 				$
 				<br>
-				<img src="../images/sinal_filtrado.png" alt="">
+				<img src="../../images/sinal_filtrado.png" alt="">
 	</center>
 	
 </div>
@@ -695,7 +695,7 @@
 			B\approx 3 rad/s
 				$
 				<br>
-				<img src="../images/sinal_filtrado2.png" alt="">
+				<img src="../../images/sinal_filtrado2.png" alt="">
 	</center>
 	
 </div>
@@ -712,7 +712,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_RL.png" width="600">
+					<img src="../../images/filtro_RL.png" width="600">
 					<center class="lightup">
 						$
 						H(\omega)=\frac{j\omega}{j\omega+\frac{R}{L}}
@@ -734,7 +734,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_RL.png" width="600">
+					<img src="../../images/filtro_RL.png" width="600">
 					<center class="lightup">
 						$
 						|H(\omega)|=\frac{\omega}{\sqrt{\omega^2+(\frac{R}{L})^2}},\quad \theta(\omega)=\arctan(\frac{R}{\omega L})
@@ -756,7 +756,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_rl_espectro.png" width="800">
+					<img src="../../images/filtro_rl_espectro.png" width="800">
 		
 	</center>
 	
@@ -774,7 +774,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_rl_espectro_db.png" width="800">
+					<img src="../../images/filtro_rl_espectro_db.png" width="800">
 		
 	</center>
 	
@@ -793,7 +793,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_rl_meia_potencia.png" width="800">
+					<img src="../../images/filtro_rl_meia_potencia.png" width="800">
 		
 	</center>
 	
@@ -811,7 +811,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_rl_meia_potencia2.png" width="800">
+					<img src="../../images/filtro_rl_meia_potencia2.png" width="800">
 		
 	</center>
 	
@@ -855,7 +855,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_RL.png" width="600">
+					<img src="../../images/filtro_RL.png" width="600">
 			
 	<center class="lightup">
 		$
@@ -880,7 +880,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_RLC.png" width="600">
+					<img src="../../images/filtro_RLC.png" width="600">
 			
 	<center class="lightup">
 		$
@@ -904,7 +904,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_RLC.png" width="600">
+					<img src="../../images/filtro_RLC.png" width="600">
 			
 	<center class="lightup">
 		$
@@ -928,7 +928,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_rlc_espectro.png" width="800">
+					<img src="../../images/filtro_rlc_espectro.png" width="800">
 			
 
 	</center>
@@ -947,7 +947,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_rlc_meia_potencia.png" width="800">
+					<img src="../../images/filtro_rlc_meia_potencia.png" width="800">
 			
 
 	</center>
@@ -966,7 +966,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_rlc_meia_potencia2.png" width="800">
+					<img src="../../images/filtro_rlc_meia_potencia2.png" width="800">
 			
 
 	</center>
@@ -985,7 +985,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/circuito_RLC_rejeita.png" width="700">
+					<img src="../../images/circuito_RLC_rejeita.png" width="700">
 			
 			<p class="lightup">$H(\omega)=\frac{j(\omega L-\frac{1}{\omega C})}{R+j(\omega L-\frac{1}{\omega C})}$
 			</p>
@@ -1005,7 +1005,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/circuito_RLC_rejeita.png" width="700">
+					<img src="../../images/circuito_RLC_rejeita.png" width="700">
 			
 			<p class="lightup">$B_0=\frac{1}{\sqrt{LC}}$
 			</p>
@@ -1024,7 +1024,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_rlc_rejeita_espectro.png" width="800">
+					<img src="../../images/filtro_rlc_rejeita_espectro.png" width="800">
 			
 	
 	</center>
@@ -1042,7 +1042,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_rlc_rejeita_meia_potencia.png" width="800">
+					<img src="../../images/filtro_rlc_rejeita_meia_potencia.png" width="800">
 			
 	
 	</center>
@@ -1061,7 +1061,7 @@
 	<div class="slide-content">
 		
 		<center>
-					<img src="../images/filtro_rlc_rejeita_meia_potencia2.png" width="800">
+					<img src="../../images/filtro_rlc_rejeita_meia_potencia2.png" width="800">
 			
 	
 	</center>
@@ -1136,11 +1136,11 @@
 
 		
 
-		<script src="../../dist/reveal.js"></script>
-		<script src="../../plugin/notes/notes.js"></script>
-		<script src="../../plugin/markdown/markdown.js"></script>
-		<script src="../../plugin/highlight/highlight.js"></script>
-		<script src="../../plugin/math/math.js"></script>
+		<script src="../../reveal.js/dist/reveal.js"></script>
+		<script src="../../reveal.js/plugin/notes/notes.js"></script>
+		<script src="../../reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="../../reveal.js/plugin/highlight/highlight.js"></script>
+		<script src="../../reveal.js/plugin/math/math.js"></script>
 		<script src="../../init.js"></script>
 		
 	</body>

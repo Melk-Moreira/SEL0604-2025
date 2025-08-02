@@ -6,17 +6,17 @@
 
 		<title>SEL0604 - Sinais e Sistemas</title>
 
-		<link rel="stylesheet" href="../../dist/reset.css">
-		<link rel="stylesheet" href="../../dist/reveal.css">
-		<link rel="stylesheet" href="../../dist/theme/white.css" id="theme">
+		<link rel="stylesheet" href="../../reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../../reveal.js/dist/theme/white.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="../../plugin/highlight/monokai.css" id="highlight-theme">
-		<link rel="stylesheet" href="../style.css">
+		<link rel="stylesheet" href="../../reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="../../style.css">
 
 		<script
 		type="text/javascript"
-		src="../../dist/vis-graph3d.min.js"
+		src="../../reveal.js/dist/vis-graph3d.min.js"
 	  ></script>
 	  <!-- <script type="text/javascript">
 		var data = null;
@@ -74,8 +74,8 @@
 
 				
 				<section data-hide-slide-number="true" data-transition="slide">
-					<div class="logo"><img src="../images/sel.png"/> </div>
-					<div class="logo2"><img src="../images/usp.png"/> </div>
+					<div class="logo"><img src="../../images/sel.png"/> </div>
+					<div class="logo2"><img src="../../images/usp.png"/> </div>
 					<div class="title">
 					<h2>Aula 11: <br>Transformada de Fourier de Sinais Periódicos<br>SEL0604</h2>
 					</div>
@@ -197,7 +197,7 @@
 			</div>
 			<div class="slide-content">
 		<center>
-		<img src="../images/cossenos_harmonicos.png" width="800">
+		<img src="../../images/cossenos_harmonicos.png" width="800">
 		</center>
 				   </div>
 
@@ -331,7 +331,7 @@ em que $T>0$ é o período de repetição do sinal.
 					\end{cases}
 					$$
 					A relação $w=\frac{a}{T}$ é chamado de <b>fator de ocupação</b>. Ex: a=1; T=4;
-	<img src="../images/trem_pulsos.png" width="750">
+	<img src="../../images/trem_pulsos.png" width="750">
 		
 			
 						
@@ -349,7 +349,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/trem_pulsos.png" width="750">
+				<img src="../../images/trem_pulsos.png" width="750">
 			</center>
 			<center class="lightup">
 			$$c_n=\frac{a}{T}\text{sinc}\left(\frac{n\omega_0a}{2}\right)$$
@@ -367,7 +367,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/trem_pulsos.png" width="750">
+				<img src="../../images/trem_pulsos.png" width="750">
 			</center>
 			<center class="lightup">
 			$$G(\omega)=\sum_{n=-\infty}^\infty 2\pi \frac{a}{T}\text{sinc}\left(\frac{n\omega_0a}{2}\right)\delta(\omega-n\omega_0)$$
@@ -385,7 +385,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/fourier_periodic_pulse2.png" width="1200">
+				<img src="../../images/fourier_periodic_pulse2.png" width="1200">
 			</center>
 			
 			   </div>
@@ -399,7 +399,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/fourier_periodic_pulse7.png" width="1200">
+				<img src="../../images/fourier_periodic_pulse7.png" width="1200">
 			</center>
 			
 			   </div>
@@ -413,22 +413,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/fourier_periodic_pulse12.png" width="1200">
-			</center>
-			
-			   </div>
-
-		</section>
-
-
-		<section>
-
-			<div class="slide-title">
-				<h2>Espectro de Módulo do trem de pulsos</h2>
-			</div>
-			<div class="slide-content">
-				<center>
-				<img src="../images/fourier_periodic_pulse17.png" width="1200">
+				<img src="../../images/fourier_periodic_pulse12.png" width="1200">
 			</center>
 			
 			   </div>
@@ -443,7 +428,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/fourier_periodic_pulse22.png" width="1200">
+				<img src="../../images/fourier_periodic_pulse17.png" width="1200">
 			</center>
 			
 			   </div>
@@ -458,7 +443,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/fourier_periodic_pulse27.png" width="1200">
+				<img src="../../images/fourier_periodic_pulse22.png" width="1200">
 			</center>
 			
 			   </div>
@@ -473,7 +458,22 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/fourier_periodic_pulse32.png" width="1200">
+				<img src="../../images/fourier_periodic_pulse27.png" width="1200">
+			</center>
+			
+			   </div>
+
+		</section>
+
+
+		<section>
+
+			<div class="slide-title">
+				<h2>Espectro de Módulo do trem de pulsos</h2>
+			</div>
+			<div class="slide-content">
+				<center>
+				<img src="../../images/fourier_periodic_pulse32.png" width="1200">
 			</center>
 			
 			   </div>
@@ -489,7 +489,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/sinal_senoidal.png" width="1200">
+				<img src="../../images/sinal_senoidal.png" width="1200">
 			</center>
 			
 			   </div>
@@ -504,7 +504,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/fourier_espectro_cosseno.png" width="1200">
+				<img src="../../images/fourier_espectro_cosseno.png" width="1200">
 				$
 					G(\omega)=\pi\delta(\omega-\omega_0)+\pi\delta(\omega+\omega_0)
 				$
@@ -523,7 +523,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/janelamento2.png" width="1200">
+				<img src="../../images/janelamento2.png" width="1200">
 			</center>
 			
 			   </div>
@@ -539,7 +539,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/janelamento_cosseno.png" width="1200">
+				<img src="../../images/janelamento_cosseno.png" width="1200">
 			</center>
 			
 			   </div>
@@ -554,7 +554,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/fourier_espectro_cosseno2.png" width="1200">
+				<img src="../../images/fourier_espectro_cosseno2.png" width="1200">
 				$
 				G(\omega)=\frac{T}{2}\text{sinc}(\frac{(\omega-\omega_0)T}{2})+\frac{T}{2}\text{sinc}(\frac{(\omega+\omega_0)T}{2})
 			$
@@ -572,7 +572,7 @@ em que $T>0$ é o período de repetição do sinal.
 			</div>
 			<div class="slide-content">
 				<center>
-				<img src="../images/janelamento_cosseno_hanning.png" width="1200">
+				<img src="../../images/janelamento_cosseno_hanning.png" width="1200">
 			</center>
 			
 			   </div>
@@ -901,11 +901,11 @@ em que $T>0$ é o período de repetição do sinal.
 
 		
 
-		<script src="../../dist/reveal.js"></script>
-		<script src="../../plugin/notes/notes.js"></script>
-		<script src="../../plugin/markdown/markdown.js"></script>
-		<script src="../../plugin/highlight/highlight.js"></script>
-		<script src="../../plugin/math/math.js"></script>
+		<script src="../../reveal.js/dist/reveal.js"></script>
+		<script src="../../reveal.js/plugin/notes/notes.js"></script>
+		<script src="../../reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="../../reveal.js/plugin/highlight/highlight.js"></script>
+		<script src="../../reveal.js/plugin/math/math.js"></script>
 		<script src="../../init.js"></script>
 		
 	</body>
