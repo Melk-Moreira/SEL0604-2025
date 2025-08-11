@@ -1,0 +1,887 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>SEL0604 - Sinais e Sistemas</title>
+
+		<link rel="stylesheet" href="../../reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../../reveal.js/dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../../reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="../../style.css">
+
+		<script
+		type="text/javascript"
+		src="../../reveal.js/dist/vis-graph3d.min.js"
+	  ></script>
+	  <!-- <script type="text/javascript">
+		var data = null;
+		var graph = null;
+  
+	
+		// Called when the Visualization API is loaded.
+		function drawVisualization() {
+		  // Create and populate a data table.
+		  data = new vis.DataSet();
+		  // create some nice looking data with sin/cos
+		  var counter = 0;
+		  var steps = 1000; // number of datapoints will be steps*steps
+		  var axisMax = 20;
+		  var axisStep = axisMax / steps;
+		  for (var t = 0*axisStep; t < axisMax; t += axisStep) {
+			  data.add({ id: counter++, y: Math.cos(t), x: t, z:Math.sin(t), style: t });
+		  }
+  
+		  // specify options
+		  var options = {
+			width: "600px",
+			height: "600px",
+			style: "line",
+			dataColor: '#ff0000',
+			showPerspective: false,
+			showGrid: true,
+			showShadow: false,
+			keepAspectRatio: false,
+			verticalRatio: 1,
+			xLabel: "t",
+			zLabel: "Imaginário",
+			yLabel: "Real",
+			showAnimationControls 	: true
+		  };
+  
+		  // Instantiate our graph object.
+		  var container = document.getElementById("mygraph");
+		  graph = new vis.Graph3d(container, data, options);
+		  graph.setCameraPosition({horizontal: -1.57, vertical: 0, distance: 1.5});
+
+
+		  var container = document.getElementById("mygraph2");
+		  graph = new vis.Graph3d(container, data, options);
+		  graph.setCameraPosition({horizontal: -0.5, vertical: 0.5, distance: 1.5});
+		}
+	  </script> -->
+	</head>
+	<!-- <body onload="drawVisualization();"> -->
+		<body>
+		
+		<div class="reveal">
+			<div class="slides">
+
+
+				
+				<section data-hide-slide-number="true" data-transition="slide">
+					<div class="logo"><img src="../../images/sel.png"/> </div>
+					<div class="logo2"><img src="../../images/usp.png"/> </div>
+					<div class="title">
+					<h2>Aula 20: <br>Resposta em Frequência de SLIT<br>SEL0604</h2>
+					</div>
+					<div class="author">
+					<h3>Prof. Melkzedekue Moreira - Melk</h3>
+				</div>
+					<div class="advisor">
+					
+					<p style="text-align: center;font-size: 0.8em;">12 de novembro de 2025</p>
+				</div>
+
+				</section>
+
+
+
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Objetivos</h2>
+		</div>
+		<div class="slide-content">
+			<p>Os objetivos dessa aula são entender:
+					<ul>
+					<li>Auto-função e Autovalor de SLIT;</li>
+					<li>Respostas em frequência de SLIT;</li>
+					<li>Exemplos</li>
+				</p>
+				</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo:</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+
+			<img src="../../images/mass_spring.png" width="450">
+			<p class="lightup">
+			
+	$
+			M\ddot{y}=-Ky-\gamma\dot{y}+F(t)
+	$
+</p>
+	<ul>
+		<li>Qual a função de transferência?</li>
+		<li>Qual a resposta ao impulso?</li>
+	</ul>
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+	
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+			$$
+			x(t)=e^{st}
+			$$
+		</p>
+		$$
+y(t)=?
+		$$
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+			$$
+			y(t)=g(t)\ast x(t)
+			$$
+		</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+			$$
+			y(t)=g(t)\ast e^{st}=\int_{-\infty}^\infty g(\tau)e^{s(t-\tau)}d\tau
+			$$
+		</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+			$$
+			y(t)=g(t)\ast e^{st}=\Bigl(\int_{-\infty}^\infty g(\tau)e^{-s\tau}d\tau\Bigr) e^{st}
+			$$
+		</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+			$$
+			y(t)=g(t)\ast e^{st}=G(s)e^{st}
+			$$
+		</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../../images/sistema_autofuncao.png" width="700">
+
+			<p class="lightup">$e^{st}$ é auto-função de SLIT! E $G(s)$ é o respectivo autovalor.</p>
+			Análogo ao $\mathbb{R}^n$:
+			$
+			A\vec{v}=\lambda \vec{v}
+			$
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+			$$
+			x(t)=e^{st}\Bigl|_{\sigma=0}=e^{j\omega t}
+			$$
+		</p>
+		$$
+y(t)=?
+		$$
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Entrada $e^{st}$ em SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<img src="../../images/sistema.png" width="600">
+$$
+x(t)=e^{st}\Bigr|_{\sigma=0}
+$$
+			<p class="lightup">
+				$$
+				y(t)=g(t)\ast e^{j\omega t}=G(j\omega )e^{j\omega t}
+				$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Transformada de Fourier</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			
+			<p class="lightup">
+				$$
+				\mathcal{F}\{g(t)\}=G(s)\Bigr|_{\sigma=0} = G(j\omega)=G(\omega)
+				$$
+			</p>
+			<img src="../../images/plano_s_fourier.png" width="400">
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta ao impulso de SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_impulso.png" width="600">
+			<p class="lightup">
+				É possível obter a resposta ao impulso de um SLIT na prática (experimentalmente)?
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_cos.png" width="700">
+			<p class="lightup">
+				Qual a saída do sistema para uma entrada cossenoidal?
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_cos.png" width="700">
+			<p class="lightup">
+				$$\cos(\omega_0 t)=\frac{e^{j\omega_0 t}+e^{-j\omega_0 t}}{2}$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+		
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_cos.png" width="700">
+			<p class="lightup">
+				$$
+				y(t)=g(t)\ast \Bigl( \frac{e^{j\omega_0 t}+e^{-j\omega_0 t}}{2}\Bigr)
+				$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_cos.png" width="700">
+			<p class="lightup">
+				$$
+				y(t)=G(j\omega_0)\frac{1}{2}e^{j\omega_0 t}+G(-j\omega_0) \frac{1}{2}e^{-j\omega_0 t}
+				$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+	
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_cos.png" width="700">
+			<p class="lightup">
+				$$
+				y(t)=G(j\omega_0)\frac{1}{2}e^{j\omega_0 t}+G^*(j\omega_0) \frac{1}{2}e^{-j\omega_0 t}
+				$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			Lembre que
+			$$
+			G(j\omega_0)=|G(j\omega_0)|e^{j\theta(\omega_0)}
+			$$
+			Portanto,
+			<p class="lightup">
+				$$
+				y(t)=|G(j\omega_0)|\frac{1}{2}(e^{j(\omega_0 t+\theta(\omega_0))}+e^{-j(\omega_0t+\theta(\omega_0))})
+				$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			Lembre que
+			$$
+			G(j\omega_0)=|G(j\omega_0)|e^{j\theta(\omega_0)}
+			$$
+			Portanto,
+			<p class="lightup">
+				$$
+				y(t)=|G(j\omega_0)|\cos(\omega_0 t +\theta(\omega_0))
+				$$
+			</p>
+		</center>
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+		<p>&nbsp;</p>
+			<img src="../../images/resposta_frequencia_cosseno_entrada.png" width="950">
+
+			
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+		<p>&nbsp;</p>
+			<img src="../../images/resposta_frequencia_cosseno2.png" width="950">
+
+			
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+		<p>&nbsp;</p>
+			<img src="../../images/sistema_cos2.png" width="950">
+
+			<p class="lightup">
+Usando um gerador de funções $\cos(\omega_0 t)$ para diferentes valores de $\omega_0$ é possível obter $|G(\omega_0)|$ e $\theta(\omega_0)$!
+			</p>
+			$$
+			G(j\omega)=|G(j\omega)|e^{j\theta(\omega_0)}
+			$$
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+		
+			<img src="../../images/resposta_frequencia.png" width="550">
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+		
+			<img src="../../images/resposta_frequencia3.png" width="550">
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+		<img src="../../images/sistema.png" width="500">
+		<p>
+		Resposta em Frequência
+		$$
+			G(j\omega)=|G(j\omega)|e^{j\theta(\omega)}
+		$$
+	</p>
+		<p class="lightup">
+			A resposta em frequência é suficiente para caracterizar um SLIT!
+		</p>
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+		<img src="../../images/sistema_impulso.png" width="500">
+		<p class="lightup">
+			Resposta ao impulso:
+			$$
+			g(t)=\mathcal{F}^{-1}\{G(j\omega)\}
+			$$
+		</p>
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+
+	
+
+
+	
+
+
+	
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Resposta em frequência do SLIT</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_cos2.png" width="950">
+			<p class="lightup">
+SLIT conservam a frequência! Uma frequência $\omega_0$ que não estiver na entrada não pode aparecer na saída.
+			</p>
+	$$
+			Y(j\omega)=G(j\omega)X(j\omega)
+	$$
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Exemplo:</h2>
+		</div>
+		
+		<div class=""> 
+		
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema.png" width="500">
+			<p class="lightup">
+			
+	$$
+			y(t)=x(t)^2
+	$$
+</p>
+	Esse sistema conserva a frequência?
+		</center>
+
+
+		</div>
+
+		
+	</section>
+
+
+
+		
+
+
+
+
+
+
+	
+
+
+
+		
+				<section>
+
+					<div class="slide-title">
+						<h2>Próxima aula</h2>
+					</div>
+					<div class="slide-content">
+						<center>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+			
+							<h3>
+								Diagrama de Bode para SLIT
+							</h3>
+								
+				</center>
+					   </div>
+
+				</section>
+
+
+
+
+
+				<section>
+
+					<div class="slide-content">
+			<center>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+					<h2>
+						Até a próxima aula!
+					</h2>
+				</center>
+								
+					
+					   </div>
+
+				</section>
+
+
+
+
+		
+				
+			
+
+
+
+				<!------------------------>
+			</div>
+		</div>
+
+		
+
+		<script src="../../reveal.js/dist/reveal.js"></script>
+		<script src="../../reveal.js/plugin/notes/notes.js"></script>
+		<script src="../../reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="../../reveal.js/plugin/highlight/highlight.js"></script>
+		<script src="../../reveal.js/plugin/math/math.js"></script>
+		<script src="../../init.js"></script>
+		
+	</body>
+</html>
+

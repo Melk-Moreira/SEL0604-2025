@@ -1,0 +1,961 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>SEL0604 - Sinais e Sistemas</title>
+
+		<link rel="stylesheet" href="../../reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="../../reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../../reveal.js/dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../../reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="../../style.css">
+
+		<script
+		type="text/javascript"
+		src="../../reveal.js/dist/vis-graph3d.min.js"
+	  ></script>
+	  <!-- <script type="text/javascript">
+		var data = null;
+		var graph = null;
+  
+	
+		// Called when the Visualization API is loaded.
+		function drawVisualization() {
+		  // Create and populate a data table.
+		  data = new vis.DataSet();
+		  // create some nice looking data with sin/cos
+		  var counter = 0;
+		  var steps = 1000; // number of datapoints will be steps*steps
+		  var axisMax = 20;
+		  var axisStep = axisMax / steps;
+		  for (var t = 0*axisStep; t < axisMax; t += axisStep) {
+			  data.add({ id: counter++, y: Math.cos(t), x: t, z:Math.sin(t), style: t });
+		  }
+  
+		  // specify options
+		  var options = {
+			width: "600px",
+			height: "600px",
+			style: "line",
+			dataColor: '#ff0000',
+			showPerspective: false,
+			showGrid: true,
+			showShadow: false,
+			keepAspectRatio: false,
+			verticalRatio: 1,
+			xLabel: "t",
+			zLabel: "Imaginário",
+			yLabel: "Real",
+			showAnimationControls 	: true
+		  };
+  
+		  // Instantiate our graph object.
+		  var container = document.getElementById("mygraph");
+		  graph = new vis.Graph3d(container, data, options);
+		  graph.setCameraPosition({horizontal: -1.57, vertical: 0, distance: 1.5});
+
+
+		  var container = document.getElementById("mygraph2");
+		  graph = new vis.Graph3d(container, data, options);
+		  graph.setCameraPosition({horizontal: -0.5, vertical: 0.5, distance: 1.5});
+		}
+	  </script> -->
+	</head>
+	<!-- <body onload="drawVisualization();"> -->
+		<body>
+		
+		<div class="reveal">
+			<div class="slides">
+
+
+				
+				<section data-hide-slide-number="true" data-transition="slide">
+					<div class="logo"><img src="../../images/sel.png"/> </div>
+					<div class="logo2"><img src="../../images/usp.png"/> </div>
+					<div class="title">
+					<h2>Aula 18: <br>Propriedades da Transformada de Laplace e Representação de SLIT<br>SEL0604</h2>
+					</div>
+					<div class="author">
+					<h3>Prof. Melkzedekue Moreira - Melk</h3>
+				</div>
+					<div class="advisor">
+					
+					<p style="text-align: center;font-size: 0.8em;">5 de novembro de 2025</p>
+				</div>
+
+				</section>
+
+
+
+
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Objetivo principal </h2>
+		</div>
+		<div class=""> 
+
+			Aprender propriedades que os sinais obedecem quando passam por uma classe especial de sistemas:<br> 
+			<P class="lightup">
+			Sistemas Lineares e Invariantes no Tempo (SLIT), causais, determinístico e não-caóticos.
+			
+		</P>
+		<img src="../../images/sistema.png" width="650">
+		</div>
+
+		
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Objetivos</h2>
+		</div>
+		<div class="slide-content">
+			<p>Os objetivos dessa aula são entender:
+					<ul>
+					<li>Propriedades da Transformada de Laplace;</li>
+					<li>Representação de SLIT: FT, pólos e zeros;</li> 
+					<li>Respostas temporais;</li>
+					<li>Teorema do Valor Final/Inicial</li>
+					<li>Exemplos</li>
+				</p>
+				</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Transformada de Laplace</h2>
+		</div>
+		<div class="slide-content">
+		Seja um sinal $g:\mathbb{R}\to\mathbb{C}$.
+		<p>&nbsp;</p>
+	<center class="lightup">
+		Bilateral:
+		$$ 
+		G(s)=\int_{-\infty}^\infty g(t)e^{-st}dt
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Transformada de Laplace</h2>
+		</div>
+		<div class="slide-content">
+		Seja $g:\mathbb{R}^+\to\mathbb{C}$ a resposta ao impulso de um sistema LIT (causal).
+ <p>&nbsp;</p>
+	<center class="lightup">
+		Unilateral:
+		$$ 
+		G(s)=\int_{0}^\infty g(t)e^{-st}dt
+		$$
+	</center>
+
+<center>Para análise de sistemas causais utiliza-se a Transformada de Laplace unilateral!</center>
+
+	
+			   </div>
+
+	</section>
+
+
+
+	
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade da Linearidade </h2>
+		</div>
+		<div class="slide-content">
+		Considere dois sinais $g:\mathbb{R}\to\mathbb{C}$ e $h:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s), \quad h(t) \Longleftrightarrow H(s)
+		$$
+		então
+		$$
+		\alpha g(t)+\beta h(t) \Longleftrightarrow \alpha G(s)+\beta H(s)
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Deslocamento no tempo </h2>
+		</div>
+		<div class="slide-content">
+		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s)
+		$$
+		então
+		$$
+		g(t-t_0) \Longleftrightarrow e^{-s t_0}G(s)
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Deslocamento na frequência </h2>
+		</div>
+		<div class="slide-content">
+		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s)
+		$$
+		então
+		$$
+		e^{s_0 t}g(t) \Longleftrightarrow G(s-s_0)
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: <i>Scaling</i></h2>
+		</div>
+		<div class="slide-content">
+		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s)
+		$$
+		então
+		$$
+		g(at) \Longleftrightarrow \frac{1}{|a|}G(\frac{s}{a})
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Inversão no tempo </h2>
+		</div>
+		<div class="slide-content">
+		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s)
+		$$
+		então
+		$$
+		g(-t) \Longleftrightarrow G(-s)
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Convolução no tempo </h2>
+		</div>
+		<div class="slide-content">
+		Considere dois sinais $g:\mathbb{R}\to\mathbb{C}$ e $h:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s),\quad h(t)\Longleftrightarrow H(s)
+		$$
+		então
+		$$
+		g(t)\ast h(t) \Longleftrightarrow G(s)H(s)
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Produto no tempo </h2>
+		</div>
+		<div class="slide-content">
+		Considere dois sinais $g:\mathbb{R}\to\mathbb{C}$ e $h:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s),\quad h(t)\Longleftrightarrow H(s)
+		$$
+		então
+		$$
+		g(t)h(t) \Longleftrightarrow \frac{1}{2\pi j}G(s)\ast H(s)
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+	
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Nível DC </h2>
+		</div>
+		<div class="slide-content">
+		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s)
+		$$
+		então
+		$$
+		g_\text{DC}=G(0)=\int_{-\infty}^\infty g(t)dt
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Instante Zero </h2>
+		</div>
+		<div class="slide-content">
+		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s)
+		$$
+		então
+		$$
+		g(0)=\frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty} G(s)ds
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Diferenciação no tempo </h2>
+		</div>
+		<div class="slide-content">
+		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s) (\text{bilateral})
+		$$
+		então
+		$$
+		\frac{dg}{dt}\Longleftrightarrow s G(s)
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Diferenciação no tempo </h2>
+		</div>
+		<div class="slide-content">
+		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s) (\text{unilateral})
+		$$
+		então
+		$$
+		\frac{dg}{dt}\Longleftrightarrow s G(s)-g(0)
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Diferenciação no tempo </h2>
+		</div>
+		<div class="slide-content">
+		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s) (\text{bilateral})
+		$$
+		então
+		$$
+		\frac{d^ng}{dt^n}\Longleftrightarrow s^n G(s)
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Diferenciação no tempo </h2>
+		</div>
+		<div class="slide-content">
+		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s) (\text{unilateral})
+		$$
+		então
+		$$
+		\frac{d^ng}{dt^n}\Longleftrightarrow s^n G(s)-\sum_{k=1}^n s^{n-k}g^{(k-1)}(0)
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Integração no tempo </h2>
+		</div>
+		<div class="slide-content">
+		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s)
+		$$
+		então
+		$$
+		\int_{-\infty}^t g(\tau)d\tau \Longleftrightarrow \quad \frac{G(s)}{s}+\frac{\int_{-\infty}^{0^{-}}x(\tau)d\tau}{s}
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Propriedade: Integração no tempo </h2>
+		</div>
+		<div class="slide-content">
+		Considere um sinal $g:\mathbb{R}\to\mathbb{C}$.
+ 
+	<center class="lightup">
+		Se 
+		$$ 
+		g(t) \Longleftrightarrow G(s)
+		$$
+		então
+		$$
+		\int_{0}^t g(\tau)d\tau \Longleftrightarrow \quad \frac{G(s)}{s}
+		$$
+	</center>
+
+
+	
+			   </div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+			<img src="../../images/sistema.png" width="650">
+			<p class="lightup">
+				EDO Lineares:
+		$$
+			\frac{d^n y}{dt^n}+\cdots+a_{n-1}\frac{dy}{dt}+a_ny=\frac{d^m x}{dt^m}+\cdots+b_{m-1}\frac{dx}{dt}+b_mx
+		$$
+	</p>
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+			<img src="../../images/sistema.png" width="650">
+			<p class="lightup">
+				EDO Lineares: (C.I.N.)<br>
+		$$
+			\mathcal{L}\{\frac{d^n y}{dt^n}+\cdots+a_{n-1}\frac{dy}{dt}+a_ny\}=\\\mathcal{L}\{\frac{d^m x}{dt^m}+\cdots+b_{m-1}\frac{dx}{dt}+b_mx\}
+		$$
+	</p>
+		</div>
+
+		
+	</section>
+
+
+
+	
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		<p>&nbsp;</p>
+		<div class=""> 
+		
+			<p class="lightup">
+				Equação Algébrica no plano-s:
+		$$
+			Y(s)=\underbrace{\frac{s^m+\cdots+b_{m-1}s+ b_m}{s^n+\cdots+a_{n-1}s+a_n}}_{G(s)}X(s)
+		$$
+		<center>Representação na frequência complexa $s$!</center>
+	</p>
+		</div>
+
+		
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<p>&nbsp;</p>
+			<p class="lightup">
+				Equação Algébrica no plano-s:
+		$$
+			Y(s)=G(s)X(s)
+		$$
+		<center>Representação na frequência complexa $s$!</center>
+	</p>
+		</div>
+
+		
+	</section>
+
+
+	
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<p>&nbsp;</p>
+			<p class="lightup">
+				Função de Transferência (FT):
+		$$
+			G(s)=\frac{Y(s)}{X(s)}
+		$$
+		<center>Representação na frequência complexa $s$!</center>
+	</p>
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+			$$
+			G(s)=\frac{s^m+\cdots+b_{m-1}s+ b_m}{s^n+\cdots+a_{n-1}s+a_n}
+			$$
+		</p>
+		</center>
+		</div>
+
+		
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Teorema de D'Alembert (Teorema Fundamental da Álgebra)
+			$$
+			G(s)=\frac{(s-z_1)(s-z_2)\cdots(s-z_m)}{(s-p_1)(s-p_2)\cdots(s-p_n)}
+			$$
+		</p>
+		</center>
+		</div>
+
+		
+	</section>
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Teorema de D'Alembert (Teorema Fundamental da Álgebra)
+			$$
+			G(s)=\frac{(s-z_1)(s-z_2)\cdots(s-z_m)\to\text{zeros}}{(s-p_1)(s-p_2)\cdots(s-p_n)\to\text{pólos}}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+				<img src="../../images/laplace_transf_polos.gif" width="750">
+		
+		</center>
+		</div>
+
+		
+	</section>
+
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Expansão em frações parciais (pólos distintos):
+			$$
+			G(s)=\frac{a_1}{s-p_1}+\frac{a_2}{s-p_2}+\cdots+\frac{a_n}{s-p_n}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Resposta temporal (pólos distintos):
+			$$
+			g(t)=(a_1e^{p_1 t}+a_2e^{p_2t}+\cdots+a_ne^{p_n t})u(t)
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<p>&nbsp;</p>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Pólos com multiplicidade:
+			$$
+			G(s)=\frac{(s-z_1)(s-z_2)\cdots(s-z_m)\to\text{zeros}}{(s-p_1)^d(s-p_2)\cdots(s-p_{n-d+1})\to\text{pólos}}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+	
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Expansão em frações parciais (pólos com multiplicidade):
+			$$
+			G(s)=\frac{a_{11}}{(s-p_1)}+\frac{a_{12}}{(s-p_1)^2}+\cdots+\frac{a_{1d}}{(s-p_1)^d}\\+\frac{a_2}{s-p_2}+\cdots+\frac{a_{n-p+1}}{s-p_{n-d+1}}
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+
+	<section>
+
+		<div class="slide-title">
+			<h2>Representação de SLIT no plano-s</h2>
+		</div>
+		
+		<div class=""> 
+		<center>
+			<img src="../../images/sistema_plano_s.png" width="600">
+			<p class="lightup">
+				Expansão em frações parciais (pólos com multiplicidade):
+			$$
+			g(t)=(a_{11}e^{p_1 t}+a_{12}te^{p_1t}+\cdots+a_{1d}t^{d-1}e^{p_1 t}\\+a_2e^{p_2t}+\cdots+a_ne^{p_n t})u(t)
+			$$
+		</p>
+		</center>
+		</div>
+
+	</section>
+
+
+		
+				<section>
+
+					<div class="slide-title">
+						<h2>Próxima aula</h2>
+					</div>
+					<div class="slide-content">
+						<center>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+			
+							<h3>
+								Resposta temporal de SLIT e estabilidade
+							</h3>
+								
+				</center>
+					   </div>
+
+				</section>
+
+
+
+
+
+				<section>
+
+					<div class="slide-content">
+			<center>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+					<h2>
+						Até a próxima aula!
+					</h2>
+				</center>
+								
+					
+					   </div>
+
+				</section>
+
+
+
+
+		
+				
+			
+
+
+
+				<!------------------------>
+			</div>
+		</div>
+
+		
+
+		<script src="../../reveal.js/dist/reveal.js"></script>
+		<script src="../../reveal.js/plugin/notes/notes.js"></script>
+		<script src="../../reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="../../reveal.js/plugin/highlight/highlight.js"></script>
+		<script src="../../reveal.js/plugin/math/math.js"></script>
+		<script src="../../init.js"></script>
+		
+	</body>
+</html>
+
